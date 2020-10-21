@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/img/Picture2.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Profession Hunter | Tools</title>
+    <!--Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Delius+Swash+Caps&family=Laila:wght@500;600&family=MuseoModerno&family=Overlock:wght@400;700;900&display=swap"
+          rel="stylesheet">
+    <!font-family: 'Arbutus Slab', serif;
+    font-family: 'Delius Swash Caps', cursive;
+    font-family: 'Laila', serif;
+    font-family: 'MuseoModerno', cursive;
+    font-family: 'Overlock', cursive;
+    Baloo Da 2-->
+
+    <!CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+</head>
+<body>
+
+<!-- Start header section -->
+<header class="header-area" id="header-area">
+    <div class="dope-nav-container px-5 breakpoint-off">
+        <div class="container px-5">
+            <div class="row">
+                <!-- dope Menu -->
+                <nav class="dope-navbar justify-content-between" id="dopeNav">
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'WebSite:home' %}">
+                        <img src="{% static 'website/img/Picture2.png' %}" width="70" height="70">
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <div class="dope-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                    </div>
+                    <!-- Menu -->
+                    <div class="dope-menu">
+                        <!-- close btn -->
+                        <div class="dopecloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="dopenav">
+                            <ul id="nav">
+                                <li>
+                                    <a href="{% url 'WebSite:home' %}">Home</a>
+                                </li>
+                                {#                                <li>#}
+                                {#                                    <a href="{% url 'WebSite:about' %}">About</a>#}
+                                {#                                </li>#}
+                                <li>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'WebSite:institution' %}">Institutions</a></li>
+
+                                        <li><a href="">courses</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:courses' %}">Details</a></li>
+                                                <li><a href="{% url 'WebSite:directory' %}">Directory</a></li>
+                                            </ul>
+                                        </li>
+                                        {#                                        <li><a href="{% url 'WebSite:career' %}">Career</a></li>#}
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Tools</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{% url 'WebSite:junior_predict' %}">Junior</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Higher Secondary</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:science' %}">Science</a>
+                                                <li><a href="{% url 'WebSite:arts' %}">Arts</a>
+                                                <li><a href="{% url 'WebSite:commerce' %}">Business Studies</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="#">{{ user.username }}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'account_profile' %}">My Profile</a></li>
+                                            {#                                            <li><a href="{% url 'BlogSite:book' %}">Books</a></li>#}
+                                            <li><a href="{% url 'BlogSite:forum' %}">Forum</a></li>
+                                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'log_in' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header section -->
+<!-- Start page-top-banner section -->
+<section class="page-top-banner section-gap-small relative" data-stellar-background-ratio="0.5"
+         style="background: url({% static 'website/img/alu.png' %}) ;background-repeat: no-repeat;height:100%; width:100%">">
+    <div class="container">
+        <div class="row section-gap-half">
+            <div class="col-lg-12 text-center">
+                <h2><span style="color:#a81cff ;font-size:40px;font-family: 'Overlock', cursive">Career Test </span> for
+                    <span style="color:#691cff;font-size: 35px ;font-family: 'Delius Swash Caps', cursive">Business Studies</span>
+                    (ব্যবসায় শিক্ষা )</h2>
+                <h3>নিচের প্রশ্নগুলো দ্বারা নিজেকে যাচাই করো...</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End about-top-banner section -->
+<!--Quiz test for junior school student-->
+<!--Scince-->
+<section class="blog-lists-section section-gap-small relative">
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size:40px;font-weight: bold">১. </span>
+                            তুমি <span style="color:#007bff"> হিসাববিজ্ঞানে </span> কেমন ?</h3>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes1" name="q1"/>
+                            <label for="yes1">খুব ভালো </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid1" name="q1"/>
+                            <label for="mid1">মোটামুটি</label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no1" name="q1"/>
+                            <label for="no1">তেমন ভালো না </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">২. </span>
+                            <span style="color:#007bff">হিসাববিজ্ঞান  </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+
+                                        <li class="disk">তথ্য সংগ্রহ করে বর্তমান আর্থিক অবস্থা সংক্ষিপ্ত বিবরণ,ব্যালেন্স
+                                            শীট, লাভ-লোকসান হিসাব ও অন্যান্য রিপোর্ট প্রস্তুত।
+                                        </li>
+                                        <li class="disk">
+                                            ডেটা গবেষণা ও বিশ্লেষণের মাধ্যমে ম্যানেজমেন্টকে আর্থিক তথ্য সরবরাহ করা ।
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk">নীতি ও পদ্ধতি প্রস্তুত এবং সুপারিশ করে অ্যাকাউন্টিং নিয়ন্ত্রণ
+                                            বজায় রাখা ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes2" name="q2"/>
+                            <label for="yes2">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid2" name="q2"/>
+                            <label for="mid2">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no2" name="q2"/>
+                            <label for="no2"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৩. </span>
+                            <span style="color:#007bff">ব্যবসায় ব্যবস্থাপনা জড়িত </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">ব্যবসায় ব্যবস্থাপনার লক্ষ্য এবং উদ্দেশ্য কে বৃদ্ধি এবং সমৃদ্ধি
+                                            করা
+                                            ।
+                                        </li>
+                                        <li class="disk">অভীষ্ট লক্ষ্যে পৌঁছানোর জন্য ব্যবসায়ের পরিকল্পনা এবং কৌশল
+                                            ডিজাইন এবং বাস্তবায়ন।
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+
+                                        <li class="disk">অংশীদার / বিক্রেতাদের / সরবরাহকারীদের সাথে সম্পর্ক বজায় রাখা
+                                            ।
+                                        </li>
+                                        <li class="disk">সর্বাধিক উত্পাদনশীলতা নিশ্চিত করে এমন কাজ সংগঠিত এবং সমন্বয়
+                                            করা।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes3" name="q3"/>
+                            <label for="yes3">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid3" name="q3"/>
+                            <label for="mid3">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no3" name="q3"/>
+                            <label for="no3"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৪. </span>
+                            <span style="color:#007bff"> ব্যবসায়ে প্রযুক্তি
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">
+                                            অর্গানাইজেশন নেটওয়ার্ক এবং ডেটাবেসগুলি বিকাশ এবং রক্ষণাবেক্ষণ করুন।
+                                            ।
+                                        </li>
+                                        <li class="disk">নতুন পদের জন্য কাজের বিবরণ রচনা এবং সাক্ষাত্কার এবং নিয়োগ
+                                            প্রক্রিয়াগুলিতে সহায়তা করা।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk">ওয়েব অ্যাপ্লিকেশনসমূহের ডেভ্লপমেন্ট এবং রক্ষণাবেক্ষণ তদারকি
+                                            করা এবং ব্যবহারকারীর ডেটা সুরক্ষা নিশ্চিত করা।
+                                            ।
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes4" name="q4"/>
+                            <label for="yes4">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid4" name="q4"/>
+                            <label for="mid4">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no4" name="q4"/>
+                            <label for="no4"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৫. </span>
+                            <span style="color:#007bff"> কৃষি এবং ব্যবস্থাপনা
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk"> উত্পাদন প্রক্রিয়া চলাকালীন নেতৃত্ব এবং সংগঠন সরবরাহ করে একটি
+                                            খামারের ব্যবসায়িক ক্রিয়াকলাপ তদারকি করা।
+                                            ।
+                                        </li>
+                                        <li class="disk">রোপণ এবং ফসল কাটার সময় রেকর্ড রাখা এবং শস্য বা পশুপালের চাহিদা
+                                            কখন রয়েছে তা সনাক্ত করা।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk"> শ্রমিকদের বাছাই ও তদারকি করা, বাজেটের পরিকল্পনা করা, রুটিন
+                                            রক্ষণাবেক্ষণের ব্যবস্থা করা, রেকর্ড রাখা এবং সম্ভাব্য পণ্য ক্রেতাদের সাথে
+                                            যোগাযোগ করা
+                                            ।
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes5" name="q5"/>
+                            <label for="yes5">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid5" name="q5"/>
+                            <label for="mid5">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no5" name="q5"/>
+                            <label for="no5"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৬. </span>
+                            <span style="color:#007bff">সেবা এবং ব্যবস্থাপনা
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">বাজেট, বিপণন, অনুমোদন করা, নিয়ন্ত্রণ ব্যয় পরিচালনা করা
+                                            ।
+                                        </li>
+                                        <li class="disk"> গ্রাহকদের সাথে সাক্ষাত করা এবং গ্রাহকদের অভিযোগ গ্রহণ করে
+                                            প্রয়োজনীয় ব্যাবস্থা নেওয়া।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk">ট্যুরিজম অ্যান্ড হস্পিটালিটি ব্যাবস্থাপনা করার ক্ষেত্রে
+                                            প্রজেক্ট রক্ষণাবেক্ষণ ও কাস্টমার দের সুরক্ষা তদারকি করা।
+                                            ।
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes6" name="q6"/>
+                            <label for="yes6">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid6" name="q6"/>
+                            <label for="mid6">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no6" name="q6"/>
+                            <label for="no6"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৭. </span>
+                            <span style="color:#007bff">অর্থ এবং ব্যবস্থাপনা
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">লোক এবং সংস্থার জন্য অ্যাকাউন্ট এবং বাজেট পরিচালনা
+                                            ।
+                                        </li>
+                                        <li class="disk">আর্থিক পরামর্শ প্রদান</li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk">বীমা পণ্য বিক্রয়
+                                            ।
+                                        </li>
+                                        <li class="disk">ব্যাংকিং পরিষেবা সরবরাহ করা।</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes7" name="q7"/>
+                            <label for="yes7">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid7" name="q7"/>
+                            <label for="mid7">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no7" name="q7"/>
+                            <label for="no7"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৮. </span>
+                            <span style="color:#007bff"> বিপনন
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">টার্গেট অডিয়েন্সদের সনাক্ত এবং সংজ্ঞায়িত করতে গবেষণা এবং ডেটা
+                                            বিশ্লেষণ পরিচালনা করা
+                                            ।
+                                        </li>
+                                        <li class="disk">সৃজনশীল বিপণন এবং ক্যাম্পেইন এর জন্য আইডিয়া ডেভ্লপ এবং ব্রেইন
+                                            স্টর্মিং করা।
+                                            ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk">ল্যান্ডস্কেপ, সীমানা এবং কাঠামো সমীক্ষা।বিভিন্ন ক্ষেত্রে
+                                            (বিষয়বস্তুর উন্নয়ন এবং অপ্টিমাইজেশন, বিজ্ঞাপন, ইভেন্ট পরিকল্পনা ইত্যাদি)
+                                            ক্ষেত্রে দক্ষতার পরিচয় দিয়ে আউটবাউন্ড বা ইনবাউন্ড বিপণনের
+                                            ক্রিয়াকলাপগুলিতে সহায়তা করা)
+                                            ।
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes8" name="q8"/>
+                            <label for="yes8">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid8" name="q8"/>
+                            <label for="mid8">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no8" name="q8"/>
+                            <label for="no8"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৯. </span>
+                            <span style="color:#007bff">সংগঠন এবং নেতৃত্ব  </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">কোনো প্রতিষ্ঠানের দায় দায়িত্ব গ্রহণ করা,সঠিক দিকনির্দেশনা দেওয়া
+                                            ,সমস্যার সমাধান করা।
+                                        </li>
+
+                                        </li>
+                                        <li class="disk">কর্মীদের সাথে ভালো আচরন,লেন্দেন সংক্রান্ত কাজ সহ ,দায়বদ্ধতা
+                                            গ্রহণ করা
+                                            ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk"> সব প্রিস্থিতিতে মাথা ঠাণ্ডা রেখে কাজ করা
+                                            ।
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes9" name="q9"/>
+                            <label for="yes9">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid9" name="q9"/>
+                            <label for="mid9">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no9" name="q9"/>
+                            <label for="no9"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size:40px;font-weight: bold">১০. </span>
+                            একজন বিপণনকারীর দুর্দান্ত কথ্য দ্বারা অন্যকে প্রভাবিত করার গুনাগুন , যোগাযোগ দক্ষতা
+                            ,সৃজনশীলতা এবং মুক্তমনা দৃষ্টিভঙ্গি থাকতে হয়। তুমি এই কাজগুলো কতটুকু করতে পারো অথবা এই
+                            গুনাগুন গুলো কতটুকু রয়েছে ?</h3>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes10" name="q10"/>
+                            <label for="yes10">খুব ভালো </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid10" name="q10"/>
+                            <label for="mid10">মোটামুটি</label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no10" name="q10"/>
+                            <label for="no10">পারি না </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Submission for result-->
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-2 m-3 p-0">
+                <a onclick="submitt()" class="primary-btn2 w-100" data-toggle="modal" data-target="#exampleModalCenter"
+                   href="#">Show Result</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-3">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        Your list of suggested Courses...</h5>
+                </div>
+                <div class="modal-body p-3">
+                    <table class="table">
+                        <tbody id="resultBody">
+                        <!--     <tr>
+                            <th style="width:50%"><span style="color:red">&#9658; </span>EEE/CSE</th>
+                            <th style="width:30%">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </th>
+                            <th style="width:20%">Waist</th>
+                        </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary py-1 px-3" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary py-1 px-3" onclick="location.href='{% url 'WebSite:careerguides' %}';">View Career Guides</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--End Quiz section-->
+    <div class="floating-shapes">
+                <span data-parallax='{"x": 150, "y": -20, "rotateZ":500}'>
+                    <img src="img/shape/fl-shape-1.png" alt="">
+                </span>
+        <span data-parallax='{"x": 250, "y": 150, "rotateZ":500}'>
+                    <img src="img/shape/fl-shape-2.png" alt="">
+                </span>
+        <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                    <img src="img/shape/fl-shape-3.png" alt="">
+                </span>
+        <span data-parallax='{"x": -20, "y": 180}'>
+                    <img src="img/shape/fl-shape-4.png" alt="">
+                </span>
+        <span data-parallax='{"x": 300, "y": 70}'>
+                    <img src="img/shape/fl-shape-5.png" alt="">
+                </span>
+        <span data-parallax='{"x": 250, "y": 180, "rotateZ":1500}'>
+                    <img src="img/shape/fl-shape-6.png" alt="">
+                </span>
+        <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                    <img src="img/shape/fl-shape-7.png" alt="">
+                </span>
+        <span data-parallax='{"x": 60, "y": -100}'>
+                    <img src="img/shape/fl-shape-9.png" alt="">
+                </span>
+        <span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+                    <img src="img/shape/fl-shape-10.png" alt="">
+                </span>
+        <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                    <img src="img/shape/fl-shape-3.png" alt="">
+                </span>
+        </span>
+        <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                <img src="img/shape/fl-shape-7.png" alt="">
+            </span>
+        <span data-parallax='{"x": -20, "y": 180}'>
+                <img src="img/shape/fl-shape-4.png" alt="">
+            </span>
+        <span data-parallax='{"x": 300, "y": 70}'>
+                <img src="img/shape/fl-shape-5.png" alt="">   <!--triangle-->
+            </span>
+
+        <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                <img src="img/shape/fl-shape-7.png" alt="">
+            </span>
+        <span data-parallax='{"x": 60, "y": -100}'>
+                <img src="img/shape/fl-shape-9.png" alt="">
+            </span>
+        </span>
+        <span data-parallax='{"x": 300, "y": 70}'>
+            <img src="img/shape/fl-shape-5.png" alt="">
+        </span>
+    </div>
+</section>
+<!-- End question section -->
+<!-- Start footer section -->
+<footer class="footer-section section-gap-half">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <a href="#">
+                    <img src="img/logo-w.png" alt="">
+                </a>
+                <p class="copyright-text">&copy; 2020 Design With
+                    <i class="fa fa-heart" aria-hidden="true"></i> By <br>
+                    <a href="http://dopetheme.com" target="_blank">Carisor Team</a>
+                </p>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index-multi.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Terms & condition</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li>
+                        <a href="tel:880174230987">880174230987</a>
+                    </li>
+                    <li>
+                        <a href="email:Support@dometheme.com.bd">Support@dometheme.com</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            West Baller court 69 <br>
+                            London , UK
+                        </a>
+                    </li>
+                </ul>
+                <ul id="social">
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer section -->
+<div class="scroll-top">
+    <i class="ti-angle-up"></i>
+</div>
+<!--
+JS
+============================================= -->
+<script src="{% static 'website/js/vendor/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'website/js/vendor/popper.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'website/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.parallax-scroll.js' %}"></script>
+<script src="{% static 'website/js/dopeNav.js' %}"></script>
+<script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/waypoints.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+<script type="text/javascript">
+    function submitt() {
+        // write here...............................................
+        //catagory based on numbering
+        var cat1 = [1, 2];
+        var cat2 = [3];
+        var cat3 = [4];
+        var cat4 = [5];
+        var cat5 = [6];
+        var cat6 = [7];
+        var cat7 = [8, 10];
+        var cat8 = [9];
+
+        var result1 = 0;
+        var result2 = 0;
+        var result3 = 0;
+        var result4 = 0;
+        var result5 = 0;
+        var result6 = 0;
+        var result7 = 0;
+        var result8 = 0;
+
+        //
+        var dict = [];
+        var radios = document.getElementsByTagName('input');
+        var value;
+        var regex = /\d+/g;
+        var val = 0;
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].type === 'radio' && radios[i].checked) {
+                value = radios[i].id;
+                var res = value.substring(0, 2);
+                var matches = value.match(regex);
+                // console.log(matches[0]);
+                if (res == "ye") {
+                    val = 2
+                } else if (res == "mi") {
+                    val = 1
+                } else if (res == "no") {
+                    val = 0
+                } else {
+                    console.log("error");
+                }
+                // write here...............................................
+                if (cat1.includes(parseInt(matches[0]))) {
+                    result1 += val
+                }
+                if (cat2.includes(parseInt(matches[0]))) {
+                    result2 += val
+                }
+                if (cat3.includes(parseInt(matches[0]))) {
+                    result3 += val
+                }
+                if (cat4.includes(parseInt(matches[0]))) {
+                    result4 += val
+                }
+                if (cat5.includes(parseInt(matches[0]))) {
+                    result5 += val
+                }
+                if (cat6.includes(parseInt(matches[0]))) {
+                    result6 += val
+                }
+                if (cat7.includes(parseInt(matches[0]))) {
+                    result7 += val
+                }
+                if (cat8.includes(parseInt(matches[0]))) {
+                    result8 += val
+                }
+
+            }
+        }
+        // write here...............................................
+        // document.getElementById("html1").innerHTML = getPercentage(parseInt(cat1.length*3), result1);
+        // document.getElementById("html2").innerHTML = getPercentage(parseInt(cat2.length*3), result2);
+        // document.getElementById("html3").innerHTML = getPercentage(parseInt(cat3.length*3), result3);
+        // document.getElementById("html4").innerHTML = getPercentage(parseInt(cat4.length*3), result4);
+        dict.push({
+            key: "একাউন্টিং/একাউন্টিং এন্ড ইনফরমেশন সিস্টেমস্ ",
+            value: getPercentage(parseInt(cat1.length * 2), result1)
+        });
+        dict.push({
+            key: "ম্যানেজমেন্ট ",
+            value: getPercentage(parseInt(cat2.length * 2), result2)
+        });
+        dict.push({
+            key: "ম্যানেজমেন্ট ইনফরমেশন সিস্টেম/টেক্সটাইল ম্যানেজমেন্ট এন্ড বিজনেজ স্টাডিজ /এভিয়েশন ম্যানেজমেন্ট ",
+            value: getPercentage(parseInt(cat3.length * 2), result3)
+        });
+        dict.push({
+            key: "কৃষিব্যবসা ও বিপণন/কৃষি অর্থনীতি",
+            value: getPercentage(parseInt(cat4.length * 2), result4)
+        });
+        dict.push({
+            key: "ট্যুরিজম অ্যান্ড হস্পিটালিটি ম্যানেজমেন্ট ",
+            value: getPercentage(parseInt(cat5.length * 2), result5)
+        });
+        dict.push({
+            key: "ফাইন্যান্স /ফাইন্যান্স ও ব্যাংকিং  ",
+            value: getPercentage(parseInt(cat6.length * 2), result6)
+        });
+
+        dict.push({
+            key: " মার্কেটিং  ",
+            value: getPercentage(parseInt(cat7.length * 2), result7)
+        });
+
+        dict.push({
+            key: " ইনোভেশন & এন্টারপ্রিনিউরশিপ/অর্গানাইজেশন স্ট্র্যাটেজি এন্ড লিডারশিপ  ",
+            value: getPercentage(parseInt(cat8.length * 2), result8)
+        });
+
+
+        dict.sort(function (a, b) {
+            return b.value - a.value;
+        });
+        // console.log(dict);
+        document.getElementById("resultBody").innerHTML = '';
+        dict.forEach(function (item) {
+            // console.log(item.key + ": " + item.value);
+var newCont = '<tr><th style="width:50%"><span style="color:red">&#9658; </span>' + item.key +'</th><th style="width:30%"><div class="progress"><div class="progress-bar progress-bar-striped" role="progressbar" style="width: ' + item.value + ' % " aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div></div></th><th style="width:20%">' + item.value +'% </th></tr>';
+            document.getElementById("resultBody").innerHTML += newCont;
+        });
+        // var total = parseInt(cat1.length*3);
+        // console.log(result1);
+        // console.log(total);
+    }
+
+    function getPercentage(num, per) {
+        return ((per / num) * 100).toFixed(2);
+    }
+</script>
+</body>
+</html>

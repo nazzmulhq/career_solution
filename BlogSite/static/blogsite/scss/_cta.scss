@@ -1,0 +1,20 @@
+/* =================================== */
+/*  CTA Styles 
+/* =================================== */
+
+.cta-section{
+    background: url(../img/banner2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    h1,h4,p{
+        color: $white;
+    }
+    h4{
+        font-weight: 400;
+        padding-top:20px;
+        padding-bottom:30px;
+    }
+    .overlay-bg{
+        background: rgba(#000,.8);
+    }
+}

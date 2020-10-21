@@ -1,0 +1,30 @@
+/* =================================== */
+/*  Download Styles 
+/* =================================== */
+
+.download-section{
+    background: url(../img/download-bg.png);
+    p{
+        margin-top:20px;
+        margin-bottom:0px;
+    }
+    .download-wrap{
+        padding-top: 80px;
+    }
+
+    .dload-btn{
+        text-align: right;
+    }
+
+    .primary-btn{
+        margin-left:20px;
+        svg{
+            width:20px;
+            height:20px;
+            margin-left: 10px;
+        }
+        display: inline-flex;
+        align-items: center;
+    
+    }
+}

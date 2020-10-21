@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/img/Picture2.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Carisor</title>
+    <!--Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Delius+Swash+Caps&family=Laila:wght@500;600&family=MuseoModerno&family=Overlock:wght@400;700;900&display=swap"
+          rel="stylesheet">
+    <!font-family: 'Arbutus Slab', serif;
+    font-family: 'Delius Swash Caps', cursive;
+    font-family: 'Laila', serif;
+    font-family: 'MuseoModerno', cursive;
+    font-family: 'Overlock', cursive;
+    Baloo Da 2-->
+
+    <!CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+
+
+</head>
+<body>
+<!-- Preloader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<!-- Start header section -->
+<header class="header-area" id="header-area">
+    <div class="dope-nav-container px-5 breakpoint-off">
+        <div class="container px-5">
+            <div class="row">
+                <!-- dope Menu -->
+                <nav class="dope-navbar justify-content-between" id="dopeNav">
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'WebSite:home' %}">
+                        <img src="{% static 'website/img/Picture2.png' %}" width="70" height="70">
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <div class="dope-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                    </div>
+                    <!-- Menu -->
+                    <div class="dope-menu">
+                        <!-- close btn -->
+                        <div class="dopecloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="dopenav">
+                            <ul id="nav">
+                                <li>
+                                    <a href="{% url 'WebSite:home' %}">Home</a>
+                                </li>
+                                {#                                <li>#}
+                                {#                                    <a href="{% url 'WebSite:about' %}">About</a>#}
+                                {#                                </li>#}
+                                <li>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'WebSite:institution' %}">Institutions</a></li>
+
+                                        <li><a href="">courses</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:courses' %}">Details</a></li>
+                                                <li><a href="{% url 'WebSite:directory' %}">Directory</a></li>
+                                            </ul>
+                                        </li>
+                                        {#                                        <li><a href="{% url 'WebSite:career' %}">Career</a></li>#}
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Tools</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{% url 'WebSite:junior_predict' %}">Junior</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Higher Secondary</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:science' %}">Science</a>
+                                                <li><a href="{% url 'WebSite:arts' %}">Arts</a>
+                                                <li><a href="{% url 'WebSite:commerce' %}">Business Studies</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="#">{{ user.username }}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'account_profile' %}">My Profile</a></li>
+                                            {#                                            <li><a href="{% url 'BlogSite:book' %}">Books</a></li>#}
+                                            <li><a href="{% url 'BlogSite:forum' %}">Forum</a></li>
+                                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'log_in' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header section -->
+<!-- Start page-top-banner section -->
+<section class="page-top-banner section-gap-haf relative" data-stellar-background-ratio="0.5"
+         style="background: url({% static 'website/img/computerbanner.png' %}); background-repeat: no-repeat;height:100%; width:100% ;">
+
+    <div class="container">
+        <div class="row section-gap-half">
+            <div class="col-lg-12 text-center">
+                <h1><span style="color:white ;font-size:40px;">..</span></h1>
+                <h4><span style="color:white ;font-family: 'Overlock', cursive;">..</span></h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End about-top-banner section -->
+
+
+<!-- Start blog-lists section -->
+
+<section class="blog-lists-section section-gap-small">
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="sidebar-wrap">
+                    <div class="single-widget archive-widget">
+                        <h4><span style="color:#a81cff;font-size:24px; font-weight:bold;">বিষয়সূচি </span></h4><br>
+                        <ul>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">পরিচিতি</a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">যা পড়ানাে হয় </a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">চাকুরির ক্ষেত্র সমূহ</a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">বেতন</a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="blog-details">
+                    <div class="post-details">
+                        <a href="single-blog.html">
+                            <h2 class="text-center"><span style="color:#a81cff;font-size:30px;
+                                            font-weight:bold; "> কম্পিউটার বিজ্ঞান ও প্রকৌশল/সফটওয়্যার প্রকৌশল/তথ্য এবং যোগাযোগ প্রযুক্তি</span>
+                            </h2>
+                        </a> <br>
+                        <p>
+                            বর্তমান যুগটাই কম্পিউটারের যুগ। এ বিভাগের শিক্ষার্থীদের স্নাতক-স্নাতকোত্তর শেষ করে চাকরির
+                            জন্য তেমন একটা ঘুরতে হয় না। তবে শিক্ষার্থীর যোগ্যতা, দক্ষতার কারণে অনেক সময় চাকরিই তাঁকে
+                            খুঁজে বের করে। আর চাকরি না করতে চাইলে ফ্রিল্যান্সিং বা ব্যবসায় নেমে প্রতিষ্ঠিত হয়েছেন
+                            অনেকেই।
+                            এই বিষয় নিয়ে তেমন বলা হবে না, কারণ একজনের আগ্রহ কখন তৈরি হবে এটি কেউ বলতে পারে না। তবে কিছু
+                            সাধারণ কথা বলে রাখা প্রয়োজন।
+                            হাজার হাজার লাইন লিখতে হবে বসে বসে। যদি ধৈর্য কম থাকে আর অল্পতেই ছেড়ে দেয়ার অভ্যাস থাকে,
+                            তাহলে এখানে এসে বিপদে পড়তে হবে। একদিন পিছিয়ে পড়লে সেটি পুষিয়ে নেয়ার জন্য অনেক অনেক বেশি
+                            খাটনি করতে হবে। তাই ফাঁকিবাজি করলে নিজেরই বিপদ। সারাদিন ল্যাপটপ বা কম্পিউটারে বসে থাকলে বা
+                            এগুলোর স্ক্রিন যদি আপনার শারীরিক কোনো ক্ষেত্রে প্রভাব ফেলে তাহলে না আসাই ভালো হবে। কারণ,
+                            এমনও দিন যেতে পারে যখন দুদিন ঘর থেকে বের হওয়া নেই। সেক্ষেত্রে ধৈর্যের সাথে শরীরের পরীক্ষাও
+                            হবে। <br>
+                            সিএসই পড়তে হলে প্রোগ্রামিং ভালো লাগতে হবে, ম্যাথ ভালো জানতে হবে- এসব সবাই বলে। তবে সেই সাথে
+                            প্রযুক্তিকেও ভালবাসতে হবে। এই ভালোবাসাটা সবার মাঝে কতটুকু থাকে বা কীভাবে আসে এটা বলা দুষ্কর।
+                            একটা বয়স থেকে স্বয়ংক্রিয়ভাবেই এই ভালোবাসাটা তৈরি হয়।
+                            মাইক্রোসফট বা গুগল ভাল লাগে? তাহলে কি তাদের নিত্যনতুন প্রজেক্টগুলো সম্পর্কে আপনি জানেন?
+                            ইউটিউবের ফিডে কি লাইনাসের ভিডিও ঘুরে বেড়ায়? ইন্টেল বা এএমডির প্রসেসরের যাবতীয় বিষয়াদি নিয়ে
+                            ফেসবুকে তর্ক-বিতর্কে লেগে পড়েন? কোন দামে কোন ল্যাপটপ কিংবা স্মার্টফোন ভালো হবে- এসবের
+                            পরামর্শ দিয়ে থাকেন? গুগল নিউজ ফিড টেক-সংক্রান্ত খবরাখবর দিয়ে ভরা? কিংবা রোর বাংলার টেক
+                            আর্টিকেলগুলো সবই আপনার পড়া? এমনটা হলে সিএসই আপনাকে সাদর আমন্ত্রণ জানাবে!
+
+                        </p><br>
+
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; ">বিষয়বস্তু </span>
+
+                        </p>
+                        <p>
+                        <ul>
+                            <li class="disk">
+                                - সফটওয়ার তৈরির বিভিন্ন কৌশল
+                            </li>
+                            <li class="disk">- কম্পিউটার ও কম্পিউটার নিয়ন্ত্রিত বিভিন্ন যন্ত্রপাতি তৈরির কৌশল</li>
+                            <li class="disk">- অটোমেশন এর বিভিন্ন কৌশল
+                            <li class="disk">- কমিউনিকেশন এর বিভিন্ন ধাপ ও কৌশল
+
+
+                        </ul>
+
+                        </p><br>
+                        <p>
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; ">সাধারনত যা পড়ানাে হয় </span>
+
+                        </p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0" style="font-style:Italic;">
+                                - অ্যালগোরিদম
+                                ,কম্পিউটার আর্কিটেকচার ও ব্যবস্থাপনা (অর্গানাইজেশন)
+                                ,কম্পিউটার সিস্টেম প্রকৌশল
+                                ,সার্কিট ও সঙ্কেত
+                                ,ডাটাবেজ সিস্টেম
+                                , ডিজিটাল লজিক
+                                , ডিজিটাল সঙ্কেত প্রক্রিয়াকরণ
+                                , ইলেকট্রনিক্‌স
+                                ,এমবেডেড সিস্টেম
+                                ,মানব-কম্পিউটার মিথস্ক্রিয়া
+                                ,অপারেটিং সিস্টেম
+                                ,প্রোগ্রামিংয়ের মূল জ্ঞান
+                                ,সামাজিক ও পেশাদারী ইস্যু
+                                ,সফটওয়্যার প্রকৌশল
+                                ,ভিএলএসআই ডিজাইন ও ফেব্রিকেশন, ইত্যাদি ।
+                            </p>
+
+                        </blockquote>
+                        <br>
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; ">গুরুত্বপূর্ণ গুণাবলী </span>
+
+                        </p>
+                        <p>
+                        <ul>
+                            <li class="disk">
+                                বিশ্লেষণাত্মক দক্ষতা
+                            </li>
+                            <li class="disk">সমালোচনামূলক চিন্তাধারার দক্ষতা</li>
+                            <li class="disk">সমস্যা সমাধানের দক্ষতা
+                            <li class="disk">যোগাযোগ দক্ষতা
+
+
+                        </p><br>
+                        <p>
+                        <h2 class="text-center"><img src="{% static 'website/img/Computer-Science-Engineer-Career.jpg' %}"
+                                                     alt="Girl in a jacket" style="width:100%;height:400px ;"></h2>
+                        <br><br>
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; "> চাকুরির ক্ষেত্র সমূহ </span>
+
+                        </p>
+                        <p> দেশে প্রযুক্তি খুব দ্রুত অগ্রসর না হলেও আমাদের দেশে আজ থেকে ৫০ বছর আগে থেকেই Computer এর
+                            ব্যবহার হয়ে আসছে। সরকারি sector গুলােতে বিশেষ করে পরমানু শক্তি কমিশন, Traffic Controlling,
+                            E-Governence, Satellite Transmission, রেল যােগাযােগ-এ কম্পিউটার এর ব্যবহার দিন দিন বাড়ছে।
+                            দেশের সরকারি চাকরিগুলোর বেশির ভাগই শুরুতে সহকারী প্রোগ্রামার, আবার অনেকে সিনিয়র প্রোগ্রামার
+                            হিসেবে যোগ দেন। কিছু কিছু জায়গায় সিস্টেমস অ্যানালিস্ট হিসেবেও কাজ হয়। এই সমস্ত field-এর
+                            বিভিন্ন ক্ষেত্রে চাকুরি পাওয়া সম্ভব। আবার বেসরকারি সেক্টরসমূহে CSE বা CS এর গ্রাজুয়েটদের
+                            চাকুরির সুযােগ আরও বেশি। বাংলাদেশ থেকে গড়ে প্রতিবছর প্রায় আড়াই থেকে তিন শ শিক্ষার্থী
+                            বিদেশে যান। তাঁরা প্রত্যেকেই দেশের সম্পদ। তাঁদের যদি সঠিকভাবে ব্যবহার করা যায়, তবে পুরো দেশ
+                            বদলে যেতে পারে। এ বিষয়ে চাকরির ক্ষেত্রে প্রথম শর্তই হচ্ছে ব্যক্তিগত যোগ্যতা। নিজের যোগ্যতা
+                            ও দক্ষতার ওপরই নির্ভর করে বেশির ভাগ চাকরি। এখানে একাডেমিক সনদের তেমন কোনো গুরুত্ব নেই। তবে
+                            ভালো শিক্ষাপ্রতিষ্ঠানের শিক্ষার্থীদের কদর একটু আলাদাই।<br>
+                            *** সাধারনত যে যে সেক্টর এবং পদবিতে কম্পিউটার বিজ্ঞান ও প্রকৌশল/সফটওয়্যার প্রকৌশল/তথ্য এবং
+                            যোগাযোগ প্রযুক্তির গ্রাজুয়েটরা কাজ করেঃ-
+                        <ul>
+                            <li class="disk">
+                                Software Engineer & Programmer,
+                            </li>
+                            <li class="disk"> Project Manager</li>
+                            <li class="disk"> System analyst</li>
+                            <li class="disk">researcher/Research analyst</li>
+                            <li class="disk"> Web application sector,Cyber security sector</li>
+                            <li class="disk">Quality Assurance Engineer,Tester
+                            <li class="disk">Operation executive</li>
+
+                            <li class="disk"> UI/UX Designer</li>
+                            <li class="disk"> It support executive</li>
+                            <li class="disk"> Documentation writer</li>
+                            <li class="disk"> Database administrator</li>
+                            <li class="disk"> Telecommunication sector</li>
+                            <li class="disk"> banking sector</li>
+                            <li class="disk"> IT Professional ,Network Administration, Teacher and many more.
+                            </li>
+                        </ul>
+
+                        </p><br>
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; ">বেতন  </span>
+
+                        </p>
+                        <h2 class="text-center"><img src="{% static 'website/img/SLARYCOMPU.JPG' %}" alt="Girl in a jacket"
+                                                     style="width:100%;height:600px ;"></h2><br>
+                        <h2 class="text-center"><img src="{% static 'website/img/computer.png' %}" alt="Girl in a jacket"
+                                                     style="width:100%;height:600px ;"></h2><br>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End blog-lists section -->
+<!--start animation section-->
+<div class="floating-shapes">
+                                                        <span data-parallax='{"x": 150, "y": -20, "rotateZ":500}'>
+                                                            <img src="img/shape/fl-shape-1.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": 250, "y": 150, "rotateZ":500}'>
+                                                            <img src="img/shape/fl-shape-2.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                                                            <img src="img/shape/fl-shape-3.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": -20, "y": 180}'>
+                                                            <img src="img/shape/fl-shape-4.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": 300, "y": 70}'>
+                                                            <img src="img/shape/fl-shape-5.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": 250, "y": 180, "rotateZ":1500}'>
+                                                            <img src="img/shape/fl-shape-6.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                                                            <img src="img/shape/fl-shape-7.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": 60, "y": -100}'>
+                                                            <img src="img/shape/fl-shape-9.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+                                                            <img src="img/shape/fl-shape-10.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                                                            <img src="img/shape/fl-shape-3.png" alt="">
+                                                        </span>
+
+    <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                                                            <img src="img/shape/fl-shape-7.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": -20, "y": 180}'>
+                                                            <img src="img/shape/fl-shape-4.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": 300, "y": 70}'>
+                                                            <img src="img/shape/fl-shape-5.png" alt="">
+        <!--triangle-->
+                                                        </span>
+
+    <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                                                            <img src="img/shape/fl-shape-7.png" alt="">
+                                                        </span>
+    <span data-parallax='{"x": 60, "y": -100}'>
+                                                            <img src="img/shape/fl-shape-9.png" alt="">
+                                                        </span>
+
+    <span data-parallax='{"x": 300, "y": 70}'>
+    </span>                                                     <img src="img/shape/fl-shape-5.png" alt="">
+</div>
+
+<!-- End animation section -->
+<!-- Start footer section -->
+<footer class="footer-section section-gap-half">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <a href="#">
+                    <img src="img/logo-w.png" alt="">
+                </a>
+                <p class="copyright-text">&copy; 2020 Design With
+                    <i class="fa fa-heart" aria-hidden="true"></i> By <br>
+                    <a href="http://dopetheme.com" target="_blank">Carisor Team</a>
+                </p>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index-multi.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Terms & condition</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li>
+                        <a href="tel:880174230987">+880174000007</a>
+                    </li>
+                    <li>
+                        <a href="email:Support@dometheme.com.bd">Support@carisor.com</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Dhaka<br>
+                            Bangladesh
+                        </a>
+                    </li>
+                </ul>
+                <ul id="social">
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer section -->
+<div class="scroll-top">
+    <i class="ti-angle-up"></i>
+</div>
+<!--
+JS
+============================================= -->
+<script src="{% static 'website/js/vendor/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'website/js/vendor/popper.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'website/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.parallax-scroll.js' %}"></script>
+<script src="{% static 'website/js/dopeNav.js' %}"></script>
+<script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/waypoints.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+</body>
+</html>

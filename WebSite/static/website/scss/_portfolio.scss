@@ -1,0 +1,82 @@
+/* =================================== */
+/*  Portfolio Styles 
+/* =================================== */
+
+.portfolio-section {
+    .single-portfolio {
+        margin-bottom: 30px;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        border-radius: 3px;
+        img{
+            @include transition();
+            width: 100%;
+        }
+        .box-content {
+            width: 100%;
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            bottom: 0px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s ease 0s;
+        }
+        &:hover {
+            .box-content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            img {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+        .box-content .title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin: 0 0 5px 0;
+        }
+        .box-content .post {
+            display: inline-block;
+            font-size: 15px;
+            color: #fff;
+            text-transform: capitalize;
+        }
+    }
+    .primary-btn {
+        margin-top: 20px;
+    }
+}
+
+.product-detials-section{
+    img{
+        width: 100%;
+    }
+    .details-right{
+        padding-bottom:20px;
+        ul{
+            margin-bottom:20px;
+            li{
+                margin-bottom: 8px;
+                color:#000;
+                font-size: 16px;
+                font-weight: 500;
+                border-bottom:1px solid #eee;
+                padding-bottom:10px;
+                span{
+                    font-weight: 900;
+                }
+            }
+        }
+        p{
+            color:#000;
+            font-weight: 400;
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }        
+    }
+}

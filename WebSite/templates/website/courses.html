@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/img/Picture2.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Profession Hunter | Services</title>
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Delius+Swash+Caps&family=Laila:wght@500;600&family=MuseoModerno&family=Overlock:wght@400;700;900&display=swap"
+          rel="stylesheet">
+
+    <!CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--bangla font kalpurush-->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+    <!--English font-->
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!--end install-->
+</head>
+<body>
+
+<!-- Start header section -->
+<header class="header-area" id="header-area">
+    <div class="dope-nav-container px-5 breakpoint-off">
+        <div class="container px-5">
+            <div class="row">
+                <!-- dope Menu -->
+                <nav class="dope-navbar justify-content-between" id="dopeNav">
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'WebSite:home' %}">
+                        <img src="{% static 'website/img/Picture2.png' %}" width="70" height="70">
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <div class="dope-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                    </div>
+                    <!-- Menu -->
+                    <div class="dope-menu">
+                        <!-- close btn -->
+                        <div class="dopecloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="dopenav">
+                            <ul id="nav">
+                                <li>
+                                    <a href="{% url 'WebSite:home' %}">Home</a>
+                                </li>
+                                {#                                <li>#}
+                                {#                                    <a href="{% url 'WebSite:about' %}">About</a>#}
+                                {#                                </li>#}
+                                <li>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'WebSite:institution' %}">Institutions</a></li>
+
+                                        <li><a href="">courses</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:courses' %}">Details</a></li>
+                                                <li><a href="{% url 'WebSite:directory' %}">Directory</a></li>
+                                            </ul>
+                                        </li>
+                                        {#                                        <li><a href="{% url 'WebSite:career' %}">Career</a></li>#}
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Tools</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{% url 'WebSite:junior_predict' %}">Junior</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Higher Secondary</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:science' %}">Science</a>
+                                                <li><a href="{% url 'WebSite:arts' %}">Arts</a>
+                                                <li><a href="{% url 'WebSite:commerce' %}">Business Studies</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="#">{{ user.username }}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'account_profile' %}">My Profile</a></li>
+                                            {#                                            <li><a href="{% url 'BlogSite:book' %}">Books</a></li>#}
+                                            <li><a href="{% url 'BlogSite:forum' %}">Forum</a></li>
+                                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'log_in' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Start page-top-banner section -->
+<section class="page-top-banner section-gap-full relative" data-stellar-background-ratio="0.5" style="background: url({% static 'website/img/grad.png' %}); ">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row section-gap-half">
+            <div class="col-lg-12 text-center">
+                                    <h1> <span style="color:white ;font-size:40px;">বাংলাদেশের শিক্ষা প্রতিষ্ঠানসমূহ</span></h1>
+                    <h4><span style="color:white ;font-family: 'Overlock', cursive;">Get a complete list of courses offered by top Universities & Colleges in Bangladesh </span></h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End about-top-banner section -->
+<!-- Start blog-lists section -->
+<section class="blog-lists-section section-gap-small">
+    <div class="container w-100">
+        <div class="row">
+{#            <div class="col-lg-3">#}
+{#                <div class="sidebar-wrap">#}
+{#                    <div class="single-widget archive-widget">#}
+{#                        <ul>#}
+{#                            <li class="d-flex justify-content-between">#}
+{#                                <a href="#">Browse by location</a>#}
+{#                            </li>#}
+{#                            <li class="d-flex justify-content-between pb-0 mb-0">#}
+{#                                <a href="#">Browse by category</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+            <div class="col-lg-12">
+                <div class="container w-100">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="blog-details">
+                                <div class="post-details">
+                                    <h4 class="text-center"> বাংলাদেশের শিক্ষা প্রতিষ্ঠানসমূহ</h4></div>
+                                <br>
+                                <p class="px-5">ক্যারিয়ার গঠনে সর্বাপেক্ষা গুরুত্বপূর্ণ ভিত্তি হচ্ছে শিক্ষা আর এই
+                                    শিক্ষাই একজন ব্যক্তিকে প্রয়োজনীয় প্রাথমিক দক্ষতা প্রদান করে । প্রত্যেকটি দেশের
+                                    মতো
+                                    আমাদের দেশের শিক্ষাব্যবস্থায় নির্দিষ্ট পাঠক্রম রয়েছে । আমাদের দেশের শিক্ষা
+                                    ব্যবস্থায় ছেলেমেয়েদেরকে আবশ্যিকভাবে বিশ্ববিদ্যালয় পর্যায়ে যাবার জন্য ১২ বা
+                                    ১৪
+                                    বছরের শিক্ষাজীবন পার করতে হয় যাতে প্রধানতঃ তিনটি স্তর রয়েছে অর্থাৎ প্রাথমিক
+                                    স্তর,
+                                    মাধ্যমিক এবং উচ্চমাধ্যমিক স্তর । এছাড়াও বাংলাদেশের সকল পর্যায়ের শিক্ষা
+                                    সংশ্লিষ্ট
+                                    তথ্য সংরক্ষণ করার জন্য রয়েছে বাংলাদেশ ব্যুরো অব এডুকেশন ইনফরমেশন এন্ড
+                                    স্ট্যাটিসটিকস
+                                    (BANBEIIS )। এই ব্যানবেইসের ডাটাবেসে মাধ্যমিক স্কুল থেকে শুরু করে বিদেশী
+                                    ছাত্রবৃত্তি
+                                    দেওয়া পর্যন্ত সব ধরনের তথ্য সংরক্ষিত থাকে।
+                                    এখানে আমরা বিশ্ববিদ্যালয় ,ডিগ্রী কলেজ, ডিপ্লোমা সহ বিভিন্ন ধরনের ইন্সটিটিউট
+                                    সম্পর্কে জানবো।
+                                </p><br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% for subjectscategory in subjectsCategory %}
+                <div class="container w-100">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="blog-details">
+                                <div class="post-details">
+                                    <!--For collapse-->
+
+                                    <a data-toggle="collapse" href="#{{ subjectscategory.id }}" role="button"
+                                       aria-expanded="false"
+                                       aria-controls="{{ subjectscategory.id }}">
+                                        <!--end collapse-->
+                                        <!--Subject list based on catagory-->
+
+                                        <h3 class="text-center">{{ subjectscategory.subjects_category }}
+                                        </h3>
+                                    </a>
+                                    <div class="list-group collapse pt-4" id="{{ subjectscategory.id }}">
+                                        {% for id, branchesname in branches_name.items %}
+                                            {% if subjectscategory.id == id %}
+                                                {% for branches_name in branchesname %}
+                                                    <li href="#"
+                                                        class="list-group-item list-group-item-action flex-column align-items-start">
+                                                        <div class="container w-100">
+                                                            <div class="row">
+                                                                <div class="col-lg-4 my-auto">
+                                                                    <h5 class="py-2">{{ branches_name }}
+                                                                    </h5>
+                                                                </div>
+                                                                <div class="col-sm-8 d-flex  justify-content-between my-2">
+                                                                    <a href="{% url 'WebSite:courses_filter' branches_name.id %}"
+                                                                       class="col-4">
+                                                                        <button type="button"
+                                                                                class=" mr-1 btn2 btn-outline-primary">
+                                                                            সবগুলো কোর্স দেখুন <i
+                                                                                class="fa fa-caret-right"
+                                                                                aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                    <a href="#0">
+                                                                        <button class=" ml-1 btn2 btn-primary"
+                                                                                type="submit">
+                                                                            বিস্তারিত
+                                                                            <i class="fa fa-caret-right"
+                                                                               aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- End blog-lists section -->
+<!-- Start footer section -->
+<footer class="footer-section section-gap-half">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <a href="#">
+                    <img src="img/logo-w.png" alt="">
+                </a>
+                <p class="copyright-text">&copy; 2018 Design With
+                    <i class="fa fa-heart" aria-hidden="true"></i> By <br>
+                    <a href="http://dopetheme.com" target="_blank">Dope Theme</a>
+                </p>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index-multi.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Terms & condition</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li>
+                        <a href="tel:880174230987">880174230987</a>
+                    </li>
+                    <li>
+                        <a href="email:Support@dometheme.com.bd">Support@dometheme.com</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            West Baller court 69 <br>
+                            London , UK
+                        </a>
+                    </li>
+                </ul>
+                <ul id="social">
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer section -->
+<div class="scroll-top">
+    <i class="ti-angle-up"></i>
+</div>
+<!--
+JS
+============================================= -->
+<script src="{% static 'website/js/vendor/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'website/js/vendor/popper.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'website/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.parallax-scroll.js' %}"></script>
+<script src="{% static 'website/js/dopeNav.js' %}"></script>
+<script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/waypoints.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+
+</body>
+</html>

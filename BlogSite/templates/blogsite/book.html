@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header class="header-area" id="header-area">
+    <div class="dope-nav-container px-5 breakpoint-off">
+        <div class="container px-5">
+            <div class="row">
+                <!-- dope Menu -->
+                <nav class="dope-navbar justify-content-between" id="dopeNav">
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'WebSite:home' %}">
+                        <img src="{% static 'website/img/Picture2.png' %}" width="70" height="70">
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <div class="dope-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                    </div>
+                    <!-- Menu -->
+                    <div class="dope-menu">
+                        <!-- close btn -->
+                        <div class="dopecloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="dopenav">
+                            <ul id="nav">
+                                <li>
+                                    <a href="{% url 'WebSite:home' %}">Home</a>
+                                </li>
+                                {#                                <li>#}
+                                {#                                    <a href="{% url 'WebSite:about' %}">About</a>#}
+                                {#                                </li>#}
+                                <li>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'WebSite:institution' %}">Institutions</a></li>
+
+                                        <li><a href="">courses</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:courses' %}">Details</a></li>
+                                                <li><a href="{% url 'WebSite:directory' %}">Directory</a></li>
+                                            </ul>
+                                        </li>
+                                        {#                                        <li><a href="{% url 'WebSite:career' %}">Career</a></li>#}
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Tools</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{% url 'WebSite:junior_predict' %}">Junior</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Higher Secondary</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:science' %}">Science</a>
+                                                <li><a href="{% url 'WebSite:arts' %}">Arts</a>
+                                                <li><a href="{% url 'WebSite:commerce' %}">Business Studies</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="#">{{ user.username }}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'account_profile' %}">My Profile</a></li>
+                                            {#                                            <li><a href="{% url 'BlogSite:book' %}">Books</a></li>#}
+                                            <li><a href="{% url 'BlogSite:forum' %}">Forum</a></li>
+                                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'log_in' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<h1>BOOK</h1>
+</body>
+</html>

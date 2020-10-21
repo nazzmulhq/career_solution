@@ -1,0 +1,76 @@
+/* =================================== */
+/*  Common Styles 
+/* =================================== */
+.scroll-top {
+  width: 40px;
+  height: 40px;
+  line-height: 44px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: none;
+  background: $primary-color;
+  border-radius: 3px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, .25);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.section-title {
+  margin-bottom: 75px;
+}
+
+.gradient-bg {
+  background: -moz-linear-gradient(0deg, #f51dac 0%, #691cff 100%);
+  background: -webkit-linear-gradient(0deg, #f51dac 0%, #691cff 100%);
+  background: -ms-linear-gradient(0deg, #f51dac 0%, #691cff 100%);
+}
+
+.offwhite-bg {
+  background-color: #eee;
+}
+
+.primary-btn {
+  text-align: center;
+  border-radius: 5px;
+  background: $primary-color;
+  padding: 15px 40px;
+  font-weight: 400;
+  min-width: 160px;
+  display: inline-block;
+  color: $white;
+  @include transition();
+
+  &:hover {
+    color: $white;
+    box-shadow: 0px 30px 90px rgba($primary-color, 0.14) !important;
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+  }
+}
+
+
+.page-top-banner{
+  background: url(../img/about-header.jpg);
+  background-size: cover;
+  .overlay-bg{
+      @extend .gradient-bg;
+      opacity: .8;
+  }
+  h1{
+      color:#000;        
+      font-size: 55px;
+      margin-bottom:10px;
+  }
+  h4{
+      color:#000;
+      font-weight: 400;
+  }
+}

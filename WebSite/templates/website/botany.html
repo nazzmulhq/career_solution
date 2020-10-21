@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/img/Picture2.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Profession Hunter</title>
+    <!--Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Delius+Swash+Caps&family=Laila:wght@500;600&family=MuseoModerno&family=Overlock:wght@400;700;900&display=swap"
+          rel="stylesheet">
+    <!font-family: 'Arbutus Slab', serif;
+    font-family: 'Delius Swash Caps', cursive;
+    font-family: 'Laila', serif;
+    font-family: 'MuseoModerno', cursive;
+    font-family: 'Overlock', cursive;
+    Baloo Da 2-->
+
+    <!CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+</head>
+<body>
+<!-- Preloader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<!-- Start header section -->
+<header class="header-area" id="header-area">
+    <div class="dope-nav-container px-5 breakpoint-off">
+        <div class="container px-5">
+            <div class="row">
+                <!-- dope Menu -->
+                <nav class="dope-navbar justify-content-between" id="dopeNav">
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'WebSite:home' %}">
+                        <img src="{% static 'website/img/Picture2.png' %}" width="70" height="70">
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <div class="dope-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                    </div>
+                    <!-- Menu -->
+                    <div class="dope-menu">
+                        <!-- close btn -->
+                        <div class="dopecloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="dopenav">
+                            <ul id="nav">
+                                <li>
+                                    <a href="{% url 'WebSite:home' %}">Home</a>
+                                </li>
+                                {#                                <li>#}
+                                {#                                    <a href="{% url 'WebSite:about' %}">About</a>#}
+                                {#                                </li>#}
+                                <li>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'WebSite:institution' %}">Institutions</a></li>
+
+                                        <li><a href="">courses</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:courses' %}">Details</a></li>
+                                                <li><a href="{% url 'WebSite:directory' %}">Directory</a></li>
+                                            </ul>
+                                        </li>
+                                        {#                                        <li><a href="{% url 'WebSite:career' %}">Career</a></li>#}
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Tools</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{% url 'WebSite:junior_predict' %}">Junior</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Higher Secondary</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:science' %}">Science</a>
+                                                <li><a href="{% url 'WebSite:arts' %}">Arts</a>
+                                                <li><a href="{% url 'WebSite:commerce' %}">Business Studies</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="#">{{ user.username }}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'account_profile' %}">My Profile</a></li>
+                                            {#                                            <li><a href="{% url 'BlogSite:book' %}">Books</a></li>#}
+                                            <li><a href="{% url 'BlogSite:forum' %}">Forum</a></li>
+                                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'log_in' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header section -->
+<!-- Start page-top-banner section -->
+<section class="page-top-banner section-gap-small relative" data-stellar-background-ratio="0.5"
+         style="background: url({% static 'website/img/botan.png' %}); background-repeat: no-repeat;height:100%; width:100% ;">
+    <div class="container">
+        <div class="row section-gap-half">
+            <!-- <div class="col-lg-12 text-center">
+                <h3> <span style="color:white ;font-size:36px; font-weight:bold; ">উদ্ভিদবিজ্ঞান/কৃষি উদ্ভিদবিজ্ঞান/বিশ্ব ও পরিবেশ বিজ্ঞান</span>
+                </h3>
+                <h3></h3>
+            </div>-->
+        </div>
+    </div>
+</section>
+<!-- End about-top-banner section -->
+
+
+<!-- Start blog-lists section -->
+
+<section class="blog-lists-section section-gap-small">
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="sidebar-wrap">
+                    <div class="single-widget archive-widget">
+                        <h4><span style="color:#a81cff;font-size:24px; font-weight:bold;">বিষয়সূচি </span></h4><br>
+                        <ul>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">পরিচিতি</a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">যা পড়ানাে হয় </a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">চাকুরির ক্ষেত্র সমূহ</a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">বেতন</a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="blog-details">
+                    <div class="post-details">
+                        <a href="single-blog.html">
+                            <h2 class="text-center"><span style="color:green ;font-size:30px;
+                                                font-weight:bold; ">উদ্ভিদবিজ্ঞান/কৃষি উদ্ভিদবিজ্ঞান/বিশ্ব ও পরিবেশ বিজ্ঞান</span>
+                            </h2>
+                        </a> <br>
+                        <p>
+                            উদ্ভিদবিজ্ঞান নামটা শুনলেই সকলে ভেবে বসে গাছের নাম জানা, গাছপালা সম্পর্কিত বিষয়ই। কিন্তু
+                            সত্যিকারে বিষয় হিসেবে উদ্ভিদবিজ্ঞান অনেক বড় জায়গা নিয়ে কাজ করে।
+                            উদ্ভিদবিজ্ঞানের মত এমন মৌলিক বিষয়ের সুবিধা হলো উচ্চতর ক্ষেত্রে এই বিষয়গুলোর যেকোনটি নিয়েই
+                            কাজ করার সুযোগ থাকে। আমাদের প্রাকৃতিক সম্পদে ভরপুর এই উন্নয়নশীল দেশে প্রাকৃতিক সম্পদের সঠিক
+                            ও যুগোপযোগী ব্যবহার দেশের অর্থনীতি ও পরিবেশের জন্য খুবই জরুরি।
+
+                        </p><br>
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; ">যা পড়ানাে হয় </span>
+
+                        </p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0" style="font-style:Italic;">
+                                বাস্তুতন্ত্র, পরিবেশ ও পরিবেশ বিপর্যয়, অর্থনৈতিক উদ্ভিদবিদ্যা, জৈব প্রযুক্তি ও জীব
+                                প্রকৌশল, উদ্ভিদ প্রজনন, জীনতত্ত্ব, শ্রেণীবদ্ধ বিদ্যা, ভ্রুনবিদ্যা, উদ্ভিদ শরীর বিদ্যা,
+                                কর্মসংস্থান বিদ্যা, কোষ বিদ্যা, জৈব বৈচিত্র, শৈবাল বিদ্যা, অ্যাকুয়াকালচার, কোষ ও কোষ
+                                বিভাজন, উদ্ভিদ রােগতত্ত্ব।
+                            </p>
+                        </blockquote>
+                        <br>
+                        <h2 class="text-center"><img src="{% static 'website/img/tissue-culture.jpg' %}" alt="Girl in a jacket"
+                                                     style="width:700px;height:400px ;"></h2><br><br>
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; "> চাকুরির ক্ষেত্র সমূহ </span>
+
+                        </p>
+
+
+                        <p>
+                        <ul>
+                            <li class="disk">
+                                মাধ্যমিক, উচ্চ মাধ্যমিক, স্নাতক ও স্নাতকোত্তর এর সকল শিক্ষা প্রতিষ্ঠানে
+                                শিক্ষকতাসহ বিসিএস ক্যাডার সার্ভিসে যােগদানের সুযােগ।
+                            </li>
+                            <li class="disk"> Medical Representative হিসাবে বিভিন্ন ফার্মাসিউটিক্যাল কোম্পানীতে
+                                যােগদানের সুযােগ।
+                            </li>
+                            <li class="disk">ফরেস্ট অফিসার হিসেবে যােগদানের সুযােগ।
+                            <li class="disk">Agronomy সংশ্লিষ্ট কর্মকাণ্ডে যােগদানের সুযােগ।
+                            <li class="disk"> কৃষি সংশ্লিষ্ট সংস্থাগুলােতে নিয়ােজিত হওয়ার সুযােগ।
+                            <li class="disk">BCSIR, NIPSOM, IEDCR, AIPH, ICDDR, BIRDEM ও অন্যান্য দেশী বিদেশী গবেষণা
+                                প্রতিষ্ঠানে বৈজ্ঞানিক কর্মকর্তা হিসাবে যােগদানের সুযােগ।
+                            </li>
+                            <li class="disk">শিক্ষালয় জ্ঞানকে কাজে লাগিয়ে ব্যক্তিগত উদ্যোগ Harticulture, নার্সারি
+                                স্থাপন,
+                                বনায়ন, এ্যাকুয়াকালচার, উন্নতমানের ফসল উৎপাদন করার সুযােগ।
+                            </li>
+                        </ul>
+
+                        </p><br>
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; ">বেতন  </span>
+
+                        </p>
+                        <h2 class="text-center"><img src="{% static 'website/img/salary.JPG' %}" alt="Girl in a jacket"
+                                                     style="width:100%;height:400px ;"></h2><br>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End blog-lists section -->
+<!--start animation section-->
+<div class="floating-shapes">
+                                    <span data-parallax='{"x": 150, "y": -20, "rotateZ":500}'>
+                                        <img src="img/shape/fl-shape-1.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": 250, "y": 150, "rotateZ":500}'>
+                                        <img src="img/shape/fl-shape-2.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                                        <img src="img/shape/fl-shape-3.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": -20, "y": 180}'>
+                                        <img src="img/shape/fl-shape-4.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": 300, "y": 70}'>
+                                        <img src="img/shape/fl-shape-5.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": 250, "y": 180, "rotateZ":1500}'>
+                                        <img src="img/shape/fl-shape-6.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                                        <img src="img/shape/fl-shape-7.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": 60, "y": -100}'>
+                                        <img src="img/shape/fl-shape-9.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+                                        <img src="img/shape/fl-shape-10.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                                        <img src="img/shape/fl-shape-3.png" alt="">
+                                    </span>
+
+    <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                                        <img src="img/shape/fl-shape-7.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": -20, "y": 180}'>
+                                        <img src="img/shape/fl-shape-4.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": 300, "y": 70}'>
+                                        <img src="img/shape/fl-shape-5.png" alt="">   <!--triangle-->
+                                    </span>
+
+    <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                                        <img src="img/shape/fl-shape-7.png" alt="">
+                                    </span>
+    <span data-parallax='{"x": 60, "y": -100}'>
+                                        <img src="img/shape/fl-shape-9.png" alt="">
+                                    </span>
+
+    <span data-parallax='{"x": 300, "y": 70}'>
+                                        <img src="img/shape/fl-shape-5.png" alt="">
+</div>
+</section>
+<!-- End animation section -->
+<!-- Start footer section -->
+<footer class="footer-section section-gap-half">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <a href="#">
+                    <img src="img/logo-w.png" alt="">
+                </a>
+                <p class="copyright-text">&copy; 2020 Design With
+                    <i class="fa fa-heart" aria-hidden="true"></i> By <br>
+                    <a href="http://dopetheme.com" target="_blank">Carisor Team</a>
+                </p>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index-multi.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Terms & condition</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li>
+                        <a href="tel:880174230987">+880174000007</a>
+                    </li>
+                    <li>
+                        <a href="email:Support@dometheme.com.bd">Support@carisor.com</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Dhaka<br>
+                            Bangladesh
+                        </a>
+                    </li>
+                </ul>
+                <ul id="social">
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer section -->
+<div class="scroll-top">
+    <i class="ti-angle-up"></i>
+</div>
+<!--
+JS
+============================================= -->
+<script src="{% static 'website/js/vendor/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'website/js/vendor/popper.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'website/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.parallax-scroll.js' %}"></script>
+<script src="{% static 'website/js/dopeNav.js' %}"></script>
+<script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/waypoints.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* =================================== */
+/*  Contact Styles
+/* =================================== */
+.contact-section {
+background: url(../img/download-bg.png);
+.section-title {
+padding-top: 120px;
+}
+border-bottom:100px solid #222;
+}
+.form-row {
+background: $white;
+padding: 30px 0px;
+border-radius: 3px;
+margin-bottom: -100px;
+box-shadow: 0px 0px 158px 0px rgba(0, 0, 0, 0.11);
+-webkit-box-shadow: 0px 0px 158px 0px rgba(0, 0, 0, 0.11);
+-moz-box-shadow: 0px 0px 158px 0px rgba(0, 0, 0, 0.11);
+}
+.address-wrap {
+.single-address-col {
+text-align: center;
+margin-bottom: 40px;
+i {
+font-size: 50px;
+color: $primary-color;
+}
+p {
+font-size: 16px;
+margin-top: 10px;
+color: $black;
+}
+}
+}
+.contact-form-wrap {
+padding: 50px;
+.form-col {
+margin-bottom: 30px;
+}
+.form-control {
+border-radius: 0px;
+border-top: none;
+border-left: none;
+border-right: none;
+background: transparent;
+padding-left: 0px;
+&:focus {
+box-shadow: none !important;
+border-color: $black !important;
+}
+}
+.primary-btn {
+vertical-align: center;
+margin-top: 30px;
+border: none;
+&:focus {
+outline: none;
+}
+}
+}
+.form-row {
+.message {
+height: 50px;
+width: 100%;
+font-size: 13px;
+line-height: 50px;
+text-align: center;
+float: none;
+margin-top: 20px;
+display: none;
+color: #fff;
+}
+.error {
+background: #ef5659;
+}
+.success {
+background: $primary-color;
+}
+}
+.contact-page-section{
+background: #eee!important;
+.single-address-col .div{
+padding:30px 0px;
+border-radius: 5px;
+background: $white;
+margin-bottom: 40px;
+}
+}
+.home-contact{
+padding-bottom: 50px;
+}

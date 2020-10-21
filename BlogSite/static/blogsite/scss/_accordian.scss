@@ -1,0 +1,98 @@
+/* =================================== */
+/*  Accordian Styles 
+/* =================================== */
+.home-faq-section{
+    padding-top:120px;
+}
+
+.accordion > dt{
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    -webkit-box-shadow: 0 7px 20px -10px #000;
+    -moz-box-shadow: 0 7px 20px -10px #000;
+    box-shadow: 0 7px 20px -10px #000;  
+  }
+  
+  .accordion > dt > a{
+    display: block;
+    position: relative;
+    color: #222222;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 3px;
+    border: 1px solid #e8e8e8;
+  }
+  
+  .accordion > dt > a:hover{
+    text-decoration: none;
+    border-color: #ddd;
+    background: #fbfbfb;
+  }
+  
+  .accordion > dt > a.active{
+    color: #fff;
+    border-color: $primary-color;
+    background: $primary-color;
+    cursor: default;
+    &:after{
+      color:#fff!important;
+    }
+  }
+  
+  .accordion > dt > a:after {
+    content: "\f107";
+    width: 15px;
+    height: 15px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    font-family: 'FontAwesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: #999;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .accordion > dt > a.active:after,
+  .accordion > dt > a.active:hover:after{
+    content: "\f106";
+    color: #111;
+  }
+  
+  .accordion > dt > a:hover:after{
+    color: #444;
+  }
+  
+  .accordion > dd{
+    margin-bottom: 10px;
+    padding: 10px 20px 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #777;
+  }
+  
+  
+  .accordion > dt > a,
+  .accordion > dt > a:after,
+  .toggle > dt > a,
+  .toggle > dt > a:after {
+    -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  }
+  
+  
+  .accordion > dt > a.active {
+    pointer-events: none !important;
+    cursor: default !important;
+  }

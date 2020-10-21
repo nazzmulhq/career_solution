@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/img/Picture2.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Profession Hunter | Services</title>
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Delius+Swash+Caps&family=Laila:wght@500;600&family=MuseoModerno&family=Overlock:wght@400;700;900&display=swap"
+          rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'website/filter/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'website/filter/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/filter/js/modernizr.js' %}">
+    <!-- Modernizr -->
+</head>
+<body>
+
+<header class="header-area" id="header-area">
+    <div class="dope-nav-container px-5 breakpoint-off">
+        <div class="container px-5">
+            <div class="row">
+                <!-- dope Menu -->
+                <nav class="dope-navbar justify-content-between" id="dopeNav">
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'WebSite:home' %}">
+                        <img src="{% static 'website/img/Picture2.png' %}" width="70" height="70">
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <div class="dope-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                    </div>
+                    <!-- Menu -->
+                    <div class="dope-menu">
+                        <!-- close btn -->
+                        <div class="dopecloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="dopenav">
+                            <ul id="nav">
+                                <li>
+                                    <a href="{% url 'WebSite:home' %}">Home</a>
+                                </li>
+                                {#                                <li>#}
+                                {#                                    <a href="{% url 'WebSite:about' %}">About</a>#}
+                                {#                                </li>#}
+                                <li>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'WebSite:institution' %}">Institutions</a></li>
+
+                                        <li><a href="">courses</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:courses' %}">Details</a></li>
+                                                <li><a href="{% url 'WebSite:directory' %}">Directory</a></li>
+                                            </ul>
+                                        </li>
+                                        {#                                        <li><a href="{% url 'WebSite:career' %}">Career</a></li>#}
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Tools</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{% url 'WebSite:junior_predict' %}">Junior</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Higher Secondary</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:science' %}">Science</a>
+                                                <li><a href="{% url 'WebSite:arts' %}">Arts</a>
+                                                <li><a href="{% url 'WebSite:commerce' %}">Business Studies</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="#">{{ user.username }}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'account_profile' %}">My Profile</a></li>
+                                            {#                                            <li><a href="{% url 'BlogSite:book' %}">Books</a></li>#}
+                                            <li><a href="{% url 'BlogSite:forum' %}">Forum</a></li>
+                                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'log_in' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header section -->
+<main class="cd-main-content">
+    <div class="cd-tab-filter-wrapper">
+        <div style="height:85px; width: 100%;"></div>
+        <div class="cd-tab-filter">
+            <ul class="cd-filters">
+                <li class="placeholder">
+                    <a data-type="all" href="#0">সব
+                    </a>
+                    <!-- selected option on mobile -->
+                </li>
+                <li class="filter">
+                    <a class="selected" href="{% url 'WebSite:institution' %}" data-type="all">সব
+                    </a>
+                </li>
+                <li class="filter" data-filter=".color-1">
+                    <a href="{% url 'WebSite:filter' 1 %}" data-type="color-1">সরকারি
+                    </a>
+                </li>
+                <li class="filter" data-filter=".color-2">
+                    <a href="{% url 'WebSite:filter' 2 %}" data-type="color-2">বেসরকারি
+                    </a>
+                </li>
+            </ul>
+            <!-- cd-filters -->
+        </div>
+        <!-- cd-tab-filter -->
+    </div>
+    <!-- cd-tab-filter-wrapper -->
+    <section class="blog-lists-section section-gap-full cd-gallery">
+        <div class="col-xs-1 mb-5" align="center">
+            <p class="h3">বাংলাদেশের শিক্ষা প্রতিষ্ঠানসমূহ </p>
+        </div>
+
+        {% for x in all %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sidebar-wrap">
+                            <div class="single-widget recent-post-widget">
+                                <ul>
+                                    <li class="d-flex flex-row">
+                                        <div class="thumbs">
+                                            <img class="img-fluid" src="/media/{{ x.icon }} "
+                                                 alt="{{ x.institutions }} icon ">
+                                        </div>
+                                        <div class="details col justify-content-center align-self-center">
+                                            <h3 class="p-h4">{{ x.institutions }}</h3>
+                                            </a>
+                                            <p class="mt-2">{{ x.location }}</p>
+                                        </div>
+                                    </li>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-10 mt-3 p-0">
+                                                <h3 class="text-left p-h4">
+                                                    {{ x.institutions_category }}
+                                                    {% for key, values in study_level.items %}
+                                                        {% if x.id == key %}
+                                                            {% for student_lev in values %}
+                                                                {{ student_lev }} |
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </h3>
+                                            </div>
+                                            <div class="col-lg-2 mt-3 p-0">
+                                                <a class="primary-btn2 w-100" href="{{ x.website }}">Know More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <!-- cd-gallery -->
+        <div class="cd-filter">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="cd-filter-block">
+                    <h4 class="text-left">INSTITUTION</h4>
+                    <div class="cd-filter-content">
+                        {{ universityfilter.form.institutions }}
+                    </div>
+                    <!-- cd-filter-content -->
+                </div>
+                <!-- cd-filter-block -->
+                <div class="cd-filter-block">
+                    <h4 class="text-left">সব
+                    </h4>
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            {{ universityfilter.form.types }}
+                        </li>
+                    </ul>
+                    <!-- cd-filter-content -->
+                </div>
+                <div class="cd-filter-block">
+                    <h4 class="text-left">বিভাগ
+                    </h4>
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            {{ universityfilter.form.location }}
+                        </li>
+                    </ul>
+                    <!-- cd-filter-content -->
+                </div>
+                <div class="cd-filter-block">
+                    <h4 class="text-left"> ধরন
+                    </h4>
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            {{ universityfilter.form.category }}
+                        </li>
+                    </ul>
+                    <!-- cd-filter-content -->
+                </div>
+                <div class="cd-filter-block">
+                    <h4 class="text-left">শিক্ষাপ্রতিষ্ঠানসমূহের ধরন
+                    </h4>
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            {{ universityfilter.form.institutions_category }}
+                        </li>
+                    </ul>
+                    <!-- cd-filter-content -->
+                </div>
+                <!-- cd-filter-block -->
+                <div class="col-lg-2 mt-3 p-0">
+                    <input type="submit" class="primary-btn2 w-100" value="Submit">
+                </div>
+
+
+                <!-- cd-filter-block -->
+            </form>
+            <a href="#" class="cd-close">Close</a>
+        </div>
+        <!-- cd-filter -->
+        <a href="#" class="cd-filter-trigger">Filters</a>
+    </section>
+</main>
+<!-- Start footer section -->
+<footer class="footer-section section-gap-half">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <a href="#">
+                    <img src="{% static 'website/filter/img/logo-w.png' %}" alt="">
+                </a>
+                <p class="copyright-text">&copy; 2020 Design With
+                    <i class="fa fa-heart" aria-hidden="true"></i> By
+                    <a href="http://dopetheme.com" target="_blank">Profession Hunter Team</a>
+                </p>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Resources</h4>
+                <ul>
+                    <li>
+                        <a href="index-multi.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about-us.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="service.html">Services</a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Help</h4>
+                <ul>
+                    <li>
+                        <a href="#">Terms &condition</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Support</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li>
+                        <a href="tel:880174230987">880174230987</a>
+                    </li>
+                    <li>
+                        <a href="email:Support@dometheme.com.bd">Support@dometheme.com</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            West Baller court 69 <br>London , UK
+
+                        </a>
+                    </li>
+                </ul>
+                <ul id="social">
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer section -->
+<div class="scroll-top">
+    <i class="ti-angle-up"></i>
+</div>
+<!--JS============================================= -->
+<script src="{% static 'website/js/vendor/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'website/js/vendor/popper.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'website/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.parallax-scroll.js' %}"></script>
+<script src="{% static 'website/js/dopeNav.js' %}"></script>
+<script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/waypoints.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+<script src="{% static 'website/filter/js/jquery-2.1.1.js' %}"></script>
+<script src="{% static 'website/filter/js/jquery.mixitup.min.js' %}"></script>
+<script src="{% static 'website/filter/js/main.js' %}"></script>
+
+<script type="text/javascript">
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 600) {
+            $('.scroll-top').fadeIn(600);
+        } else {
+            $('.scroll-top').fadeOut(600);
+        }
+    });
+    $('.scroll-top').on("click", function () {
+        $("html,body").animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+</script>
+<!-- Resource jQuery -->
+</body>
+</html>

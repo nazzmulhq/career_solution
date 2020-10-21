@@ -1,0 +1,300 @@
+/* =================================== */
+/*  Features Styles 
+/* =================================== */
+.featured-section {
+    .row {
+        padding-bottom: 75px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .single-logo {
+        text-align: center;
+
+        img {
+            text-align: center;
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            opacity: .5;
+            @include transition();
+
+            &:hover {
+                -ms-transform: scale(0.9, 0.9);
+                -webkit-transform: scale(0.9, 0.9);
+                transform: scale(0.9, 0.9);
+                -webkit-filter: grayscale(0%);
+                -moz-filter: grayscale(0%);
+                -ms-filter: grayscale(0%);
+                -o-filter: grayscale(0%);
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.feature-section {
+    background: url(../img/feature-bg.png)center no-repeat;
+    background-size: cover;
+
+    .header-left {
+        h1 {
+            padding-bottom: 30px;
+            font-size: 50px;
+            text-transform: capitalize;
+        }
+    }
+
+    .feature-wrap {
+        padding-top: 60px;
+    }
+}
+
+.features-wrap {
+    .single-feature {
+        background: $white;
+        border-radius: 5px;
+        padding: 40px;
+        margin-bottom: 30px;
+        @include transition();
+
+        span {
+            font-size: 35px;
+            color: $primary-color;
+            padding-bottom: 25px;
+            display: inline-block;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        h5 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 0px;
+            line-height: 1.5em;
+        }
+
+        &:hover {
+            box-shadow: 0px 30px 90px rgba($primary-color, 0.14) !important;
+
+            span,
+            p,
+            h3,
+            h5 {
+                color: $white;
+            }
+        }
+
+        .overlay-bg {
+            @extend .gradient-bg;
+            border-radius: 5px;
+            opacity: 0;
+            @include transition();
+        }
+
+        &:hover {
+            background: transparent;
+
+            .overlay-bg {
+                opacity: 1;
+            }
+
+            span,
+            h3,
+            h5,
+            p {
+                position: relative;
+            }
+        }
+    }
+}
+
+.explore-section {
+    background: url(../img/explore.jpg) right top no-repeat;
+    background-size: cover;
+    color: $white;
+
+    h1,
+    h3 {
+        color: $white;
+    }
+
+    h3 {
+        font-weight: 300
+    }
+
+    h1 {
+        font-size: 45px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .overlay-bg {
+        background: linear-gradient(to right, #000, rgba(#eb8fa9, 0));
+    }
+
+    .counter-wrap {
+        margin-top: 30px;
+    }
+
+    .single-counter {
+        width: calc(100%/3);
+        border-right: 1px solid #eeeeee5c;
+        text-align: center;
+
+        &:last-child {
+            border-right: none;
+        }
+
+        p {
+            margin-bottom: 0px
+        }
+
+        h2 {
+            font-weight: 300;
+            font-size: 50px;
+            color: $white;
+        }
+    }
+}
+
+.service-section {
+    padding-bottom: 120px;
+
+    .single-service {
+        position: relative;
+        background-color: #f5f5f56b;
+        padding: 40px 30px;
+        -webkit-box-shadow: 0 7px 20px -10px rgba(171, 171, 171, 0.7);
+        -moz-box-shadow: 0 7px 20px -10px rgba(171, 171, 171, 0.7);
+        box-shadow: 0 7px 20px -10px rgba(171, 171, 171, 0.7);
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+
+        i {
+            font-size: 35px;
+            color: $black;
+        }
+
+        h4 {
+            margin: 10px 0px;
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+
+        &:hover {
+            -webkit-transform: translateY(-10px);
+            -moz-transform: translateY(-10px);
+            -ms-transform: translateY(-10px);
+            -o-transform: translateY(-10px);
+            transform: translateY(-10px);
+            -webkit-box-shadow: 0 10px 50px -12px rgba(171, 171, 171, 0.9);
+            -moz-box-shadow: 0 10px 50px -12px rgba(171, 171, 171, 0.9);
+            box-shadow: 0 10px 50px -12px rgba(171, 171, 171, 0.9);
+        }
+    }
+
+    .owl-dots {
+        text-align: center;
+        margin-top: 30px;
+
+        .owl-dot {
+            // border-radius: 20px;
+            width: 14px;
+            height: 14px;
+            background: #eee;
+            ;
+            display: inline-block;
+            margin: 0px 5px;
+
+            &.active {
+                background: $primary-color;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.skill-section {
+    background: #eee;
+
+    .skill-left {
+        p{
+            margin-top:10px;
+        }
+        .prog_container {
+            margin-bottom: 25px;
+            width: 90%;
+        }
+
+        .progress {
+            background-color: #f9f9f9 !important;
+        }
+
+        .prog_container .prog_text {
+            font-size: 13px;
+            text-transform: capitalize;
+            color: #000;
+            margin-bottom: 5px;
+            position: relative;
+            width: 100%;
+            font-weight: 700;
+        }
+
+        .prog_container .prog_text .precent {
+            position: absolute;
+            right: 0;
+        }
+
+        .prog_container .progress {
+            height: 3px;
+            border-radius: 4px;
+        }
+
+        .prog_container .progress .progress-bar {
+            background-color: $primary-color;
+            height: 100%;
+        }
+
+        .prog_container .progress.md {
+            height: 10px;
+        }
+
+        .prog_container .progress.lg {
+            height: 20px;
+        }
+
+        @media all and (max-width: 767px) {
+            .prog_container .prog_text .precent {
+                position: -webkit-sticky;
+                position: sticky;
+                right: 0;
+            }
+        }
+    }
+
+    .skill-right {
+        img {
+            border-radius: 3px;
+            background: $white;
+            padding: 10px;
+            -webkit-box-shadow: 0 7px 20px -10px #000;
+            -moz-box-shadow: 0 7px 20px -10px #000;
+            box-shadow: 0 7px 20px -10px #000;
+        }
+    }
+}

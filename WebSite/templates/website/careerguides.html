@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/Picture2.png">
+    <!-- Author Meta -->
+    <meta name="author" content="">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Carisor</title>
+    <!--Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Delius+Swash+Caps&family=Laila:wght@500;600&family=MuseoModerno&family=Overlock:wght@400;700;900&display=swap"
+          rel="stylesheet">
+    <!font-family: 'Arbutus Slab', serif;
+    font-family: 'Delius Swash Caps', cursive;
+    font-family: 'Laila', serif;
+    font-family: 'MuseoModerno', cursive;
+    font-family: 'Overlock', cursive;
+    Baloo Da 2-->
+
+    <!CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+</head>
+<body>
+<!-- Preloader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<!-- Start header section -->
+<header class="header-area" id="header-area">
+    <div class="dope-nav-container px-5 breakpoint-off">
+        <div class="container px-5">
+            <div class="row">
+                <!-- dope Menu -->
+                <nav class="dope-navbar justify-content-between" id="dopeNav">
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'WebSite:home' %}">
+                        <img src="{% static 'website/img/Picture2.png' %}" width="70" height="70">
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <div class="dope-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                    </div>
+                    <!-- Menu -->
+                    <div class="dope-menu">
+                        <!-- close btn -->
+                        <div class="dopecloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="dopenav">
+                            <ul id="nav">
+                                <li>
+                                    <a href="{% url 'WebSite:home' %}">Home</a>
+                                </li>
+                                {#                                <li>#}
+                                {#                                    <a href="{% url 'WebSite:about' %}">About</a>#}
+                                {#                                </li>#}
+                                <li>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'WebSite:institution' %}">Institutions</a></li>
+
+                                        <li><a href="">courses</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:courses' %}">Details</a></li>
+                                                <li><a href="{% url 'WebSite:directory' %}">Directory</a></li>
+                                            </ul>
+                                        </li>
+                                        {#                                        <li><a href="{% url 'WebSite:career' %}">Career</a></li>#}
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Tools</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{% url 'WebSite:junior_predict' %}">Junior</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Higher Secondary</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:science' %}">Science</a>
+                                                <li><a href="{% url 'WebSite:arts' %}">Arts</a>
+                                                <li><a href="{% url 'WebSite:commerce' %}">Business Studies</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="#">{{ user.username }}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'account_profile' %}">My Profile</a></li>
+                                            {#                                            <li><a href="{% url 'BlogSite:book' %}">Books</a></li>#}
+                                            <li><a href="{% url 'BlogSite:forum' %}">Forum</a></li>
+                                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'log_in' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header section -->
+<!-- Start page-top-banner section -->
+<section class="page-top-banner section-gap-small relative" data-stellar-background-ratio="0.5"
+         style="background: url({% static 'website/img/career.png' %}) ; background-repeat: no-repeat;height:100%; width:100%">
+    <div class="container">
+        <div class="container">
+            <div class="row section-gap-half">
+                <div class="col-lg-12 text-center">
+                    <h2><span
+                            style="color:#a81cff ;font-size:40px;font-family: 'Overlock', cursive">Career guides </span>
+                        for <span style="color:#691cff;font-size: 38px ;font-family: 'Delius Swash Caps', cursive">Science, Humanities, Business studies</span>
+                    </h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Start blog-lists section -->
+<section class="blog-lists-section section-gap-small">
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="sidebar-wrap">
+                    <div class="single-widget archive-widget">
+                        <h4><span style="color:#a81cff;font-size:24px; font-weight:bold;">বিষয়সূচি </span></h4><br>
+                        <ul>
+                            <li class="d-flex justify-content-between">
+                                <a href="#">পরিচিতি</a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+
+                            <li class="d-flex justify-content-between">
+                                <a href="#">বিষয়সমূহ </a>
+                                <i class="fa fa-lightbulb-o" style="color:red" aria-hidden="true"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="blog-details">
+                    <div class="post-details">
+                        <a href="single-blog.html">
+                            <h2 class="text-center"><span style="color:purple;font-size:30px;
+                                                font-weight:bold; ">ক্যারিয়ার গাইডস</span></h2>
+                        </a> <br>
+                        <p>
+                            ক্যারিয়ার গঠনের প্রস্তুতিকল্পে বিষয় নির্বাচন অত্যন্ত জরুরী ভূমিকা রেখে থাকে। ইপ্সিত
+                            লক্ষ্যে পৌঁছানোর জন্য যে বিষয়ে প্রয়োজন সেটা যেমন লক্ষণীয় ব্যাপার, পাশাপাশি সে ব্যাপারে
+                            শিক্ষার্থীর আগ্রহ আদৌ রয়েছে কিনা তাও ধর্তব্যের বিষয়।
+                            উচ্চশিক্ষার যদি ক্যারিয়ারের সোপান হয় তবে সেই সোপানে উত্তরনের জন্য বিভাগ নির্বাচনের মাধ্যমে
+                            নির্বাচন প্রক্রিয়া অত্যন্ত সতর্কতার মাধ্যমে হওয়া উচিত। এখানে শিক্ষার্থীরা অভিপ্রায় সহজাত
+                            আগ্রহ এবং অনুরাগ গুরুত্ব পাওয়া উচিত। মস্তিষ্ক জাত অপার সম্ভাবনাকে কাজে লাগিয়ে ব্যক্তিগত
+                            সফলতার সাথে সাথে মানবজাতিকে উপকৃত করাই ক্যারিয়ার ভাবনার মূল উদ্দেশ্য।
+                            বর্তমানে পেশাদারিত্বের সাথে বৈশ্বিক চেতনা গ্লোবালাইজেশন যুক্ত হওয়ায় ক্যারিয়ার ভাবনা এসেছে
+                            নানামাত্রিক পরিবর্তন।
+
+                        </p>
+                        <p>
+                            <span style="color:red ;font-size:18px; font-weight:bold; font-style:Italic ">ক্যারিয়ার হলো </span>
+
+                        </p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">শিক্ষা ও প্রশিক্ষণের ভিত্তিতে অর্জিত এমন এক ধর্ম যেখানে ব্যক্তির সমগ্র
+                                কর্মজীবনে গুণগত এবং অভিজ্ঞতা সম্পর্কিত উত্তরোত্তর সমৃদ্ধি আসে দায়িত্বের ব্যাপকতা বৃদ্ধি
+                                পায় এবং জীবনযাপনের পর্যাপ্ত অর্থের নিশ্চয়তা থাকে। </p>
+                        </blockquote>
+                        <p>
+                            স্পষ্ট এবং সুউচ্চ টার্গেট মানুষের সাধনা ও গতিকে কয়েকগুণ বাড়িয়ে দিতে পারে। এর অভাবে আমরা
+                            নিজেকে একটি সুন্দর পর্যায়ে উন্নত করতে পারিনা।
+                            ইচ্ছে করলেই আমরা সবকিছু হতে পারি না আমাদেরকে আমাদের ক্যারিয়ার পছন্দ, দক্ষতা এবং গুণাবলীর
+                            উপর ভিত্তি করে বাছাই করা উচিত।
+                            এগুলোর উপর ভিত্তি করে আমরা একটি টেস্ট দিয়ে এসেছি। এখন ক্যারিয়ার এসেসমেন্ট টেস্টের উপর
+                            ভিত্তি করে স্নাতক শ্রেনীতে ভর্তির জন্য কিছু নির্বাচিত বিষয়সমূহ নিম্নে তুলে ধরা হলো।
+                            তোমার যেই পছন্দের শীর্ষে থাকা বিষয়সমূহ অথবা ক্যারিয়ার টেস্ট দেওয়ার পর সম্ভাব্য সর্বোচ্চ
+                            নাম্বারপ্রাপ্ত বিষয়গুলোর ভবিষ্যৎ ক্যারিয়ার সম্ভাবনা সম্পর্কে জানতে চাইলে নিম্নের বিজ্ঞান
+                            শাখা,মানবিক শাখা & ব্যবসায় শিক্ষা শাখার ভিত্তিতে বিস্তারিত আলোচনা দেখতে পারো।
+
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End blog-lists section -->
+<div class="container w-100">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="blog-details">
+                <div class="post-details">
+                    <!--For collapse-->
+                    <a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+                       aria-controls="collapseExample1">
+                        <!--end collapse-->
+                        <!--Subject list based on catagory-->
+                        <h3 class="text-center">
+                            <i class="fa fa-angle-double-down" aria-hidden="true">Science (বিজ্ঞান শাখা) </i>
+                        </h3>
+                    </a>
+                    <div class="list-group collapse pt-4" id="collapseExample1">
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">উদ্ভিদবিজ্ঞান/কৃষি উদ্ভিদবিজ্ঞান/বিশ্ব ও পরিবেশ বিজ্ঞান
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px"> সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+
+                                        <a href="botany.html">
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">প্রাণিবিদ্যা/অণুজীববিজ্ঞান/মৎস্য বিজ্ঞান/প্রাণরসায়ন ও অনুপ্রাণ
+                                            বিজ্ঞান
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2"> প্রাণী বিজ্ঞান এবং ভেটেরিনারি মেডিসিন
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2"> ফার্মেসি/ক্লিনিকাল ফার্মেসি এন্ড ফার্মাকোলজি
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">এম বি বি এস(Surgery & Medicine)
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">পদার্থ/গনিত/পরিসংখ্যান
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">রসায়ন/তাত্ত্বিক এবং কম্পিউটেশনাল কেমিস্ট্রি
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">তড়িৎ এবং ইলেকট্রনিক কৌশল/টেলিকমিউনিকেশন ইঞ্জিনিয়ারিং
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">কম্পিউটার বিজ্ঞান ও প্রকৌশল/সফটওয়্যার প্রকৌশল/তথ্য এবং যোগাযোগ
+                                            প্রযুক্তি
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">যন্ত্র প্রকৌশল/বস্তু ও ধাতব কৌশল /শিল্প ও উৎপাদন কৌশল
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2"> বস্ত্র প্রকৌশল /টেক্সটাইল কেমিক্যাল প্রসেস ইঞ্জিনিয়ারিং
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">  বায়োটেকনোলজি এন্ড জেনেটিক ইঞ্জিনিয়ারিং
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2"> স্থাপত্য/নগর ও অঞ্চল পরিকল্পনা প্রকৌশল/পুরকৌশল
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit"
+                                                    style="width: 100px; height: 50px">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container w-100">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="blog-details">
+                <div class="post-details">
+                    <!--For collapse-->
+                    <a data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+                       aria-controls="collapseExample2">
+                        <!--end collapse-->
+                        <!--Subject list based on catagory-->
+                        <h3 class="text-center">
+                            <i class="fa fa-angle-double-down" aria-hidden="true">Humanities(মানবিক শাখা) </i>
+                        </h3>
+                    </a>
+                    <div class="list-group collapse pt-4" id="collapseExample2">
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2"> রাষ্ট্রবিজ্ঞান /সমাজবিজ্ঞান/ লোক প্রশাসন/জনসংখ্যা বিজ্ঞান
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px"> সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2"> গণযোগাযোগ ও সাংবাদিকতা/শান্তি ও সংঘর্ষ অধ্যয়ন/উন্নয়ন শিক্ষা
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">ইসলামের ইতিহাস ও সংস্কৃতি
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">বাংলা/ইংরেজি/উর্দু/আরবি/সংস্কৃত/ভাষাবিজ্ঞান/ ফারসি ভাষা ও
+                                            সাহিত্য
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a href="directory.html">
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">ইসলামী শিক্ষা/পালি ও বৌদ্ধ শিক্ষা/ইসলামের ইতিহাস ও সংস্কৃতি
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">থিয়েটার & পারফরম্যান্স/টেলিভিশন চলচ্চিত্র ও
+                                            আলোকচিত্র/সংগীত/নৃত্যকলা
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">আইন /অপরাধ বিজ্ঞান /শান্তি ও সংঘর্ষ অধ্যয়ন
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">চারুকলা  & মিডিয়া / প্রিন্টিং & পাবলিকেশন স্টাডিজ
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">অর্থনীতি
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container w-100">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="blog-details">
+                <div class="post-details">
+                    <!--For collapse-->
+                    <a data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false"
+                       aria-controls="collapseExample3">
+                        <!--end collapse-->
+                        <!--Subject list based on catagory-->
+                        <h3 class="text-center">
+                            <i class="fa fa-angle-double-down" aria-hidden="true">Business Studies(ব্যাবসায় শাখা) </i>
+                        </h3>
+                    </a>
+                    <div class="list-group collapse pt-4" id="collapseExample3">
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">একাউন্টিং/একাউন্টিং এন্ড ইনফরমেশন সিস্টেমস্
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px"> সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">ম্যানেজমেন্ট
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">ম্যানেজমেন্ট ইনফরমেশন সিস্টেম/টেক্সটাইল ম্যানেজমেন্ট এন্ড
+                                            বিজনেজ স্টাডিজ /এভিয়েশন ম্যানেজমেন্ট
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">কৃষিব্যবসা ও বিপণন/কৃষি অর্থনীতি
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">ট্যুরিজম অ্যান্ড হস্পিটালিটি ম্যানেজমেন্ট
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">ফাইন্যান্স /ফাইন্যান্স ও ব্যাংকিং
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2">মার্কেটিং
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="container w-100">
+                                <div class="row">
+                                    <div class="col-lg-4 my-auto">
+                                        <h5 class="py-2"> ইনোভেশন & এন্টারপ্রিনিউরশিপ/অর্গানাইজেশন স্ট্র্যাটেজি এন্ড
+                                            লিডারশিপ
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex w-100 justify-content-around my-2 ">
+                                        <a>
+                                            <button type="button" class="w-100 mr-1 btn2 btn-outline-primary"
+                                                    style="width: 100px; height: 50px">সবগুলো কোর্স দেখুন <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                        <a>
+                                            <button class="w-100 ml-1 btn2 btn-primary" type="submit">বিস্তারিত <i
+                                                    class="fa fa-caret-right" aria-hidden="true"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- End blog-lists section -->
+<!-- Start footer section -->
+<footer class="footer-section section-gap-half">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <a href="#">
+                    <img src="img/logo-w.png" alt="">
+                </a>
+                <p class="copyright-text">&copy; 2018 Design With
+                    <i class="fa fa-heart" aria-hidden="true"></i> By <br>
+                    <a href="http://dopetheme.com" target="_blank">Dope Theme</a>
+                </p>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index-multi.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Terms & condition</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li>
+                        <a href="tel:880174230987">880174230987</a>
+                    </li>
+                    <li>
+                        <a href="email:Support@dometheme.com.bd">Support@dometheme.com</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            West Baller court 69 <br>
+                            London , UK
+                        </a>
+                    </li>
+                </ul>
+                <ul id="social">
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer section -->
+<div class="scroll-top">
+    <i class="ti-angle-up"></i>
+</div>
+<!--
+JS
+============================================= -->
+<script src="{% static 'website/js/vendor/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'website/js/vendor/popper.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'website/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.parallax-scroll.js' %}"></script>
+<script src="{% static 'website/js/dopeNav.js' %}"></script>
+<script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/waypoints.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+</body>
+</html>

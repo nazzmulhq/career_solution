@@ -1,0 +1,205 @@
+/* =================================== */
+/*  Basic Style 
+/* =================================== */
+
+::-moz-selection { /* Code for Firefox */
+    background-color:#000;
+    color: $white;
+}
+::selection {
+    background-color:#000;
+    color: $white;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #777777;
+    font-weight: 300;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #777777;
+   opacity:  1;
+   font-weight: 300;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #777777;
+   opacity:  1;
+   font-weight: 300;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #777777;
+   font-weight: 300;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #777777;
+   font-weight: 300;
+}
+
+
+body {
+    color: $text-color;
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.625em;
+    position: relative;
+}
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+select {
+    display: block;
+}
+figure {
+    margin: 0;
+}
+
+a {
+	@include transition(all .3s ease 0s);
+}
+
+iframe {
+    border: 0;
+}
+
+a, a:focus, a:hover {
+    text-decoration: none;
+    outline: 0;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn:active:focus,
+.btn:focus {
+    text-decoration: none;
+    outline: 0;
+}
+
+.card-panel {
+    margin: 0;
+    padding: 60px;
+}
+
+/**
+ *  Typography
+ *
+ **/
+
+.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i {
+  font-size: 1em;
+  line-height: inherit;
+}
+.gray-bg {
+    background: #f9f9ff;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    font-family: $primary-font;
+    color: $title-color;
+    line-height: 1.2em !important;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 600;
+}
+.h1, .h2, .h3,
+.h4, .h5, .h6 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-family: $primary-font;
+    font-weight: 600;
+    color: $title-color;
+}
+
+h1, .h1 { font-size: 36px;}
+h2, .h2 { font-size: 30px;}
+h3, .h3 { font-size: 24px;}
+h4, .h4 { font-size: 18px;}
+h5, .h5 { font-size: 16px;}
+h6, .h6 { font-size: 14px;}
+
+td, th {
+    border-radius: 0px;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clear {
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+
+// floating
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+
+.text-italic { font-style: italic; }
+.text-white { color: #fff; }
+.text-black { color: #000; }
+.transition  { @include transition();}
+.section-gap-full { padding: 120px 0; }
+.section-gap-half { padding: 75px 0; }
+.pb-30{padding-bottom: 30px;}
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+
+.display-table {display: table;}
+.light {color: $white;}
+.dark {color: $black;}
+.relative {position: relative;}
+.overflow-hidden {overflow: hidden;}
+.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.container {
+    &.fullwidth {
+        width: 100%;
+    }
+    &.no-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.no-padding {
+    padding: 0;
+}
+
+
+.padding-top-120{
+    padding-top: 120px;
+}
+
+.row {
+    &.no-margin {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

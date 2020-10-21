@@ -1,0 +1,70 @@
+/* =================================== */
+/*  Team Styles 
+/* =================================== */
+.team-section {
+  background-color: #eee;
+
+  .single-team {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    @include transition();
+
+    img {
+      width: 100%;
+      position: relative;
+    }
+
+    &:hover {
+      .team-content {
+        opacity: 1;
+      }
+    }
+  }
+
+  .team-content {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: rgba($black, .8);
+    padding: 20px 0px;
+    color: $white;
+    text-align: center;
+    opacity: 0;
+    @include transition();
+
+    a,
+    h4 {
+      color: $white;
+    }
+
+    ul {
+      li {
+        display: inline-block;
+        margin: 5px;
+      }
+    }
+  }
+
+  .owl-dots {
+    text-align: center;
+    margin-top: 30px;
+
+    .owl-dot {
+      width: 14px;
+      height: 14px;
+      background: $white;
+      ;
+      display: inline-block;
+      margin: 0px 5px;
+
+      &.active {
+        background: $primary-color;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

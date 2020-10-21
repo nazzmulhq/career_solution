@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/img/Picture2.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Profession Hunter | Tools</title>
+    <!--Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Delius+Swash+Caps&family=Laila:wght@500;600&family=MuseoModerno&family=Overlock:wght@400;700;900&display=swap"
+          rel="stylesheet">
+    <!font-family: 'Arbutus Slab', serif;
+    font-family: 'Delius Swash Caps', cursive;
+    font-family: 'Laila', serif;
+    font-family: 'MuseoModerno', cursive;
+    font-family: 'Overlock', cursive;
+    Baloo Da 2-->
+
+    <!CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'website/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'website/css/responsive.css' %}">
+</head>
+<body>
+<!-- Preloader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<!-- Start header section -->
+<header class="header-area" id="header-area">
+    <div class="dope-nav-container px-5 breakpoint-off">
+        <div class="container px-5">
+            <div class="row">
+                <!-- dope Menu -->
+                <nav class="dope-navbar justify-content-between" id="dopeNav">
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'WebSite:home' %}">
+                        <img src="{% static 'website/img/Picture2.png' %}" width="70" height="70">
+                    </a>
+                    <!-- Navbar Toggler -->
+                    <div class="dope-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                    </div>
+                    <!-- Menu -->
+                    <div class="dope-menu">
+                        <!-- close btn -->
+                        <div class="dopecloseIcon">
+                            <div class="cross-wrap">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="dopenav">
+                            <ul id="nav">
+                                <li>
+                                    <a href="{% url 'WebSite:home' %}">Home</a>
+                                </li>
+                                {#                                <li>#}
+                                {#                                    <a href="{% url 'WebSite:about' %}">About</a>#}
+                                {#                                </li>#}
+                                <li>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'WebSite:institution' %}">Institutions</a></li>
+
+                                        <li><a href="">courses</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:courses' %}">Details</a></li>
+                                                <li><a href="{% url 'WebSite:directory' %}">Directory</a></li>
+                                            </ul>
+                                        </li>
+                                        {#                                        <li><a href="{% url 'WebSite:career' %}">Career</a></li>#}
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">Tools</a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="{% url 'WebSite:junior_predict' %}">Junior</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Higher Secondary</a>
+                                            <ul class="dropdown">
+                                                <li><a href="{% url 'WebSite:science' %}">Science</a>
+                                                <li><a href="{% url 'WebSite:arts' %}">Arts</a>
+                                                <li><a href="{% url 'WebSite:commerce' %}">Business Studies</a>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="#">{{ user.username }}</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'account_profile' %}">My Profile</a></li>
+                                            {#                                            <li><a href="{% url 'BlogSite:book' %}">Books</a></li>#}
+                                            <li><a href="{% url 'BlogSite:forum' %}">Forum</a></li>
+                                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'log_in' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header section -->
+<!-- Start page-top-banner section -->
+<section class="page-top-banner section-gap-small relative" data-stellar-background-ratio="0.5"
+         style="background: url('{% static 'website/img/alu.png' %}') ;  background-repeat: no-repeat;height:100%; width:100%">
+    ;">
+
+    <div class="container">
+        <div class="row section-gap-half">
+            <div class="col-lg-12 text-center">
+                <h2><span style="color:#a81cff ;font-size:40px;font-family: 'Overlock', cursive">Career Test </span> for
+                    <span style="color:#691cff;font-size: 38px ;font-family: 'Delius Swash Caps', cursive"> Humanities</span>
+                    (মানবিক শাখা)</h2>
+                <h3>নিচের প্রশ্নগুলো দ্বারা নিজেকে যাচাই করো...</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End about-top-banner section -->
+<!--Quiz test for junior school student-->
+<!--Scince-->
+<section class="blog-lists-section section-gap-small relative">
+
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">১. </span>তোমার পাঠ্য বইয়ের
+                            <span style="color:#007bff">পৌরনীতি, সুশাসন  এবং সমাজ সম্পর্কিত
+                                        </span> অধ্যায়গুলো পড়াশোনা করতে তোমার কেমন লাগত/লাগে ? ?</h3>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes1" name="q1"/>
+                            <label for="yes1">খুব ভালো </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid1" name="q1"/>
+                            <label for="mid1">মোটামুটি</label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no1" name="q1"/>
+                            <label for="no1">তেমন ভালো না </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">২. </span>
+                            <span style="color:#007bff">সমাজ এবং রাষ্ট্র </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+
+                                        <li class="disk">
+                                            সমাজ এবং রাষ্ট্র সম্পর্কিত সামাজিক সমস্যা এবং এর সমাধান
+                                            ।
+                                        </li>
+                                        <li class="disk">
+                                            সমাজ এবং মানুষের আচরণের মধ্যে সংযোগ এবং সূত্রসমূহ পর্যবেক্ষণ করুন এবং নিজের
+                                            সংস্কৃতি সম্পর্কে বাস্তব অধ্যায়ন করা
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk">দেশের কল্যাণের জন্য গবেষণামূলক দীর্ঘ এবং স্বল্প মেয়াদী বিভিন্ন
+                                            প্রকল্প নকশা করা এবং নেতৃত্ব দেওয়া
+                                            নীতি মালা এবং আইন কীভাবে সরকার, ব্যবসা এবং নাগরিককে প্রভাবিত করে তা বুঝতে
+                                            অর্জিত জ্ঞান এবং দক্ষতা ব্যবহার করা ।
+                                        </li>
+                                        <li class="disk">
+                                            বিভিন্ন ধরনের সংস্থায় কাজ করা এবং মানুষের বিভিন্ন সমস্যার সমাধানের মাধ্যমে
+                                            জনগণের সেবা করা।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes2" name="q2"/>
+                            <label for="yes2">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid2" name="q2"/>
+                            <label for="mid2">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no2" name="q2"/>
+                            <label for="no2"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৩. </span>
+                            <span style="color:#007bff">প্রতিনিয়ত দেশ-বিদেশের সমস্যাগুলো তুলে ধরা ,সমাধান এবং গণযোগাযোগ
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <!--<div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">পৃথিবী, সমুদ্র এবং আকাশ সম্পর্কে অধ্যয়ন।
+                                        ।</li>
+                                        <li class="disk">পরিবেশে দূষণের প্রভাবগুলি নিয়ে গবেষণা করা।</li>
+                                        <li class="disk"> পরিবেশগত বর্জ্য হ্রাস করার উপায়গুলির বিষয়ে পরামর্শ দেওয়া।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+
+                                        <li class="disk">পরিবেশ রক্ষা করতে আইন প্রয়োগ করা।</li>
+                                        <li class="disk">মাটি এবং জলের পরীক্ষা করার মতো ব্যবহারিক কাজ।</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes3" name="q3"/>
+                            <label for="yes3">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid3" name="q3"/>
+                            <label for="mid3">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no3" name="q3"/>
+                            <label for="no3"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৪. </span>
+                            <span style="color:#007bff"> ভাষা এবং সাহিত্য সম্পর্কিত পড়াশুনা এবং কাজ
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">ভাষার উৎপত্তি এবং বিকাশ নিয়ে গবেষণা ,পর্যালোচনা এবং উন্নয়ন করা
+                                            ।
+                                        </li>
+                                        <li class="disk">বিভিন্ন দেশের ভাষা এবং সাহিত্য নিয়ে বিভিন্নমুখি কাজ করা</li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk">বই, নিবন্ধ,সাহিত্য এবং গবেষণাপত্র লেখা
+                                            ।
+                                        </li>
+                                        <li class="disk">অন্যদের শিক্ষা প্রদান করা
+                                            ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes4" name="q4"/>
+                            <label for="yes4">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid4" name="q4"/>
+                            <label for="mid4">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no4" name="q4"/>
+                            <label for="no4"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৫. </span>
+                            <span style="color:#007bff"> ধর্মতত্ত্ব এবং ইতিহাস
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">ধর্ম নিয়ে পড়াশোনা ,গবেষণা, প্রচার এবং শিক্ষাদান করা
+                                            ।
+                                        </li>
+                                        <li class="disk">ধর্ম এবং ধর্মতত্ত্ব নিয়ে পর্যালোচনা ও গবেষণা করা।</li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk"> ইতিহাস নিয়ে পর্যালোচনা ও গবেষণা করা।
+                                            ।
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes5" name="q5"/>
+                            <label for="yes5">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid5" name="q5"/>
+                            <label for="mid5">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no5" name="q5"/>
+                            <label for="no5"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৬. </span>
+                            <span style="color:#007bff">সৃজনশীলতা
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">বিজ্ঞাপন তৈরি করা এবং বিভিন্ন ধরনের মানুষের সাথে যোগাযোগ করা
+                                            ।
+                                        </li>
+                                        <li class="disk">ভিডিও,অভিনয়, ডকুমেন্টারি, সংবাদ, রেডিও জন্য বিভিন্ন ধরনের
+                                            স্ক্রিপ্ট লেখা ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk">সংগঠন এবং বিভিন্ন ধরনের ক্যাম্পেইন নিজস্ব লেখার মাধ্যমে প্রমোট
+                                            করা
+                                            ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes6" name="q6"/>
+                            <label for="yes6">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid6" name="q6"/>
+                            <label for="mid6">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no6" name="q6"/>
+                            <label for="no6"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৭. </span>
+                            <span style="color:#007bff">মিডিয়া বা থিয়েটার প্রযোজনা এবং পরিচালনা</span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">সেট ডিজাইন এবং নির্মাণ করা
+                                            ।
+                                        </li>
+                                        <li class="disk">সম্প্রচার, শব্দ, আলো এবং ইফেক্ট এর মত প্রযুক্তিগত কাজ করা ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+
+                                        <li class="disk">অনুষ্ঠান এবং প্রোগ্রাম পরিচালনা প্রযোজনা করা
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes7" name="q7"/>
+                            <label for="yes7">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid7" name="q7"/>
+                            <label for="mid7">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no7" name="q7"/>
+                            <label for="no7"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৮. </span>
+                            <span style="color:#007bff">
+                                            আইন এবং অপরাধ সম্পর্কিত কাজ
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">অপরাধ রোধে কাজ করা
+                                            ।
+                                        </li>
+                                        <li class="disk">দুর্নীতি ও অপরাধ বিষয়ে তদন্ত করা
+                                            ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk"> জনগণ, সম্পত্তি এবং জাতীয় সীমান্ত রক্ষা করা।
+                                            ।
+                                        </li>
+                                        <li class="disk">কারাগারে অপরাধীদের সাথে কাজ করা।</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes8" name="q8"/>
+                            <label for="yes8">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid8" name="q8"/>
+                            <label for="mid8">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no8" name="q8"/>
+                            <label for="no8"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">৯. </span>
+                            <span style="color:#007bff"> অন্যদের পক্ষে কাজ করা </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">অন্যদের আগ্রহ বা দৃষ্টিভঙ্গি উপস্থাপন
+                                            ।
+                                        </li>
+                                        <li class="disk">আদালতে ক্লায়েন্টের জন্য উপস্থিত হওয়া ।</li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+
+                                        <li class="disk">বিদেশে আপনার দেশের স্বার্থ উপস্থাপন করা।</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes9" name="q9"/>
+                            <label for="yes9">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid9" name="q9"/>
+                            <label for="mid9">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no9" name="q9"/>
+                            <label for="no9"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">১০. </span>
+                            <span style="color:#007bff">অপরাধ প্রতিরোধ বা তদন্ত  </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">অপরাধ রোধে কাজ করা
+                                            ।
+                                        </li>
+                                        <li class="disk">দুর্নীতি ও অপরাধ বিষয়ে তদন্ত করা
+                                            ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk"> জনগণ, সম্পত্তি এবং জাতীয় সীমান্ত রক্ষা করা।
+                                            ।
+                                        </li>
+                                        <li class="disk">কারাগারে অপরাধীদের সাথে কাজ করা।</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes10" name="q10"/>
+                            <label for="yes10">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid10" name="q10"/>
+                            <label for="mid10">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no10" name="q10"/>
+                            <label for="no10"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">১১. </span>
+                            <span style="color:#007bff">সৃজনশীলতা এবং অংকন </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">অপরাধ রোধে কাজ করা
+                                            ।
+                                        </li>
+                                        <li class="disk">দুর্নীতি ও অপরাধ বিষয়ে তদন্ত করা
+                                            ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk"> জনগণ, সম্পত্তি এবং জাতীয় সীমান্ত রক্ষা করা।
+                                            ।
+                                        </li>
+                                        <li class="disk">কারাগারে অপরাধীদের সাথে কাজ করা।</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes11" name="q11"/>
+                            <label for="yes11">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid11" name="q11"/>
+                            <label for="mid11">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no11" name="q11"/>
+                            <label for="no11"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">১২. </span>তোমার পাঠ্য বইয়ের
+                            <span style="color:#007bff">অর্থনীতি বিষয়ক
+                                        </span> অধ্যায়গুলো পড়াশোনা করতে তোমার কেমন লাগত/লাগে ? ?</h3>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes12" name="q12"/>
+                            <label for="yes12">খুব ভালো </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid12" name="q12"/>
+                            <label for="mid12">মোটামুটি</label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no12" name="q12"/>
+                            <label for="no12">তেমন ভালো না </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container w-100">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details mb-3">
+                    <div class="post-details">
+                        <h3 class="text-center">
+                            <span style="font-size: 40px;font-weight: bold">১৩. </span>
+                            <span style="color:#007bff">অর্থনীতি এবং দেশের অর্থ-ব্যবস্থা
+                                        </span>
+                            -জড়িত এমন কাজের ক্ষেত্রে আপনি কতটা আগ্রহী?
+                        </h3>
+                    </div>
+                    <div class="main_content work-may-include mx-5 mb-4">
+                        <p class="p-0 ml-3" style="font-size:15px; color:#dc3535; font-weight:bold;">কাজের মধ্যে
+                            অন্তর্ভুক্ত থাকতে পারে: </p>
+                        <div class="container">
+                            <div class="row pl-4">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li class="disk">
+                                            অর্থনীতিবিদ হিসেবে গবেষণা পরিচালনা, তথ্য সংগ্রহ এবং বিশ্লেষণ, অর্থনৈতিক
+                                            ট্রেন্ডসসমূহ নিরীক্ষণ এবং পূর্বাভাসের ডেভেলপ করা
+                                            ।
+                                        </li>
+                                        <li class="disk">অর্থনৈতী সম্পর্কে ব্যবসায় এবং সরকারকে পরামর্শ দেওয়া।
+                                            ।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <ul>
+                                        <li class="disk"> আইন ও বিধিবিধানের অর্থনৈতিক প্রভাব সমপরকে অধ্যয়ন করা।
+                                            ।
+                                        </li>
+                                        <li class="disk">অর্থনৈতিক পূর্বাভাসের(forecasting) জন্য পরিসংখ্যান এবং
+                                            ইকোনোমেট্রিক মডেল ডেভেলপ করা।
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex justify-content-center">
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="yes13" name="q13"/>
+                            <label for="yes13">খুব আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="mid13" name="q13"/>
+                            <label for="mid13">মোটামুটি আগ্রহী </label>
+                        </div>
+                        <div class="col-md-3 m-2 d-flex justify-content-center">
+                            <input type="radio" id="no13" name="q13"/>
+                            <label for="no13"> আগ্রহী নই </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Submission for result-->
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-2 m-3 p-0">
+                <a onclick="submitt()" class="primary-btn2 w-100" data-toggle="modal" data-target="#exampleModalCenter"
+                   href="#">Show Result</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-3">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        Your list of suggested Courses...</h5>
+                </div>
+                <div class="modal-body p-3">
+                    <table class="table">
+                        <tbody id="resultBody">
+                        <!--     <tr>
+                            <th style="width:50%"><span style="color:red">&#9658; </span>EEE/CSE</th>
+                            <th style="width:30%">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </th>
+                            <th style="width:20%">Waist</th>
+                        </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary py-1 px-3" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary py-1 px-3" onclick="location.href='{% url 'WebSite:careerguides' %}';">View Career Guides</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--End Quiz section-->
+    <div class="floating-shapes">
+                        <span data-parallax='{"x": 150, "y": -20, "rotateZ":500}'>
+                            <img src="img/shape/fl-shape-1.png" alt="">
+                        </span>
+        <span data-parallax='{"x": 250, "y": 150, "rotateZ":500}'>
+                            <img src="img/shape/fl-shape-2.png" alt="">
+                        </span>
+        <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                            <img src="img/shape/fl-shape-3.png" alt="">
+                        </span>
+        <span data-parallax='{"x": -20, "y": 180}'>
+                            <img src="img/shape/fl-shape-4.png" alt="">
+                        </span>
+        <span data-parallax='{"x": 300, "y": 70}'>
+                            <img src="img/shape/fl-shape-5.png" alt="">
+                        </span>
+        <span data-parallax='{"x": 250, "y": 180, "rotateZ":1500}'>
+                            <img src="img/shape/fl-shape-6.png" alt="">
+                        </span>
+        <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                            <img src="img/shape/fl-shape-7.png" alt="">
+                        </span>
+        <span data-parallax='{"x": 60, "y": -100}'>
+                            <img src="img/shape/fl-shape-9.png" alt="">
+                        </span>
+        <span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+                            <img src="img/shape/fl-shape-10.png" alt="">
+                        </span>
+        <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                            <img src="img/shape/fl-shape-3.png" alt="">
+                        </span>
+
+        <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                        <img src="img/shape/fl-shape-7.png" alt="">
+                    </span>
+        <span data-parallax='{"x": -20, "y": 180}'>
+                        <img src="img/shape/fl-shape-4.png" alt="">
+                    </span>
+        <span data-parallax='{"x": 300, "y": 70}'>
+                        <img src="img/shape/fl-shape-5.png" alt="">   <!--triangle-->
+                    </span>
+
+        <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                        <img src="img/shape/fl-shape-7.png" alt="">
+                    </span>
+        <span data-parallax='{"x": 60, "y": -100}'>
+                        <img src="img/shape/fl-shape-9.png" alt="">
+        </span>
+        <span data-parallax='{"x": 300, "y": 70}'>
+                    <img src="img/shape/fl-shape-5.png" alt="">
+        </span>
+    </div>
+</section>
+<!-- End question section -->
+<!-- Start footer section -->
+<footer class="footer-section section-gap-half">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <a href="#">
+                    <img src="img/logo-w.png" alt="">
+                </a>
+                <p class="copyright-text">&copy; 2020 Design With
+                    <i class="fa fa-heart" aria-hidden="true"></i> By <br>
+                    <a href="http://dopetheme.com" target="_blank">Carisor Team</a>
+                </p>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index-multi.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Terms & condition</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6 footer-cols">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li>
+                        <a href="tel:880174230987">880174230987</a>
+                    </li>
+                    <li>
+                        <a href="email:Support@dometheme.com.bd">Support@dometheme.com</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            West Baller court 69 <br>
+                            London , UK
+                        </a>
+                    </li>
+                </ul>
+                <ul id="social">
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer section -->
+<div class="scroll-top">
+    <i class="ti-angle-up"></i>
+</div>
+<!--
+JS
+============================================= -->
+<script src="{% static 'website/js/vendor/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'website/js/vendor/popper.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'website/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.parallax-scroll.js' %}"></script>
+<script src="{% static 'website/js/dopeNav.js' %}"></script>
+<script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'website/js/waypoints.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'website/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'website/js/main.js' %}"></script>
+<script type="text/javascript">
+    function submitt() {
+        // write here...............................................
+        //catagory based on numbering
+        var cat1 = [1, 2];
+        var cat2 = [3, 9];
+        var cat3 = [4];
+        var cat4 = [5];
+        var cat5 = [6, 7];
+        var cat6 = [8, 9, 10];
+        var cat7 = [6, 11];
+        var cat8 = [12, 13];
+
+        //result
+        var result1 = 0;
+        var result2 = 0;
+        var result3 = 0;
+        var result4 = 0;
+        var result5 = 0;
+        var result6 = 0;
+        var result7 = 0;
+        var result8 = 0;
+
+        //
+        var dict = [];
+        var radios = document.getElementsByTagName('input');
+        var value;
+        var regex = /\d+/g;
+        var val = 0;
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].type === 'radio' && radios[i].checked) {
+                value = radios[i].id;
+                var res = value.substring(0, 2);
+                var matches = value.match(regex);
+                // console.log(matches[0]);
+                if (res == "to") {
+                    val = 3
+                } else if (res == "ye") {
+                    val = 2
+                } else if (res == "mi") {
+                    val = 1
+                } else if (res == "no") {
+                    val = 0
+                } else {
+                    console.log("error");
+                }
+                // write here...............................................
+                if (cat1.includes(parseInt(matches[0]))) {
+                    result1 += val
+                }
+                if (cat2.includes(parseInt(matches[0]))) {
+                    result2 += val
+                }
+                if (cat3.includes(parseInt(matches[0]))) {
+                    result3 += val
+                }
+                if (cat4.includes(parseInt(matches[0]))) {
+                    result4 += val
+                }
+                if (cat5.includes(parseInt(matches[0]))) {
+                    result5 += val
+                }
+                if (cat6.includes(parseInt(matches[0]))) {
+                    result6 += val
+                }
+                if (cat7.includes(parseInt(matches[0]))) {
+                    result7 += val
+                }
+                if (cat8.includes(parseInt(matches[0]))) {
+                    result8 += val
+                }
+
+            }
+        }
+        // write here...............................................
+        // document.getElementById("html1").innerHTML = getPercentage(parseInt(cat1.length*3), result1);
+        // document.getElementById("html2").innerHTML = getPercentage(parseInt(cat2.length*3), result2);
+        // document.getElementById("html3").innerHTML = getPercentage(parseInt(cat3.length*3), result3);
+        // document.getElementById("html4").innerHTML = getPercentage(parseInt(cat4.length*3), result4);
+        dict.push({
+            key: " রাষ্ট্রবিজ্ঞান /সমাজবিজ্ঞান/ লোক প্রশাসন/জনসংখ্যা বিজ্ঞান ",
+            value: getPercentage(parseInt(cat1.length * 3), result1)
+        });
+        dict.push({
+            key: " গণযোগাযোগ ও সাংবাদিকতা/শান্তি ও সংঘর্ষ অধ্যয়ন/উন্নয়ন শিক্ষা ",
+            value: getPercentage(parseInt(cat2.length * 3), result2)
+        });
+        dict.push({
+            key: "বাংলা/ইংরেজি/উর্দু/আরবি/সংস্কৃত/ভাষাবিজ্ঞান/ ফারসি ভাষা ও সাহিত্য ",
+            value: getPercentage(parseInt(cat3.length * 3), result3)
+        });
+        dict.push({
+            key: "ইসলামী শিক্ষা/পালি ও বৌদ্ধ শিক্ষা/ইসলামের ইতিহাস ও সংস্কৃতি",
+            value: getPercentage(parseInt(cat4.length * 3), result4)
+        });
+        dict.push({
+            key: "থিয়েটার & পারফরম্যান্স/টেলিভিশন চলচ্চিত্র ও আলোকচিত্র/সংগীত/নৃত্যকলা",
+            value: getPercentage(parseInt(cat5.length * 3), result5)
+        });
+        dict.push({
+            key: "আইন /অপরাধ বিজ্ঞান /শান্তি ও সংঘর্ষ অধ্যয়ন ",
+            value: getPercentage(parseInt(cat6.length * 3), result6)
+        });
+
+        dict.push({
+            key: "চারুকলা  & মিডিয়া / প্রিন্টিং & পাবলিকেশন স্টাডিজ",
+            value: getPercentage(parseInt(cat7.length * 3), result7)
+        });
+
+        dict.push({
+            key: "অর্থনীতি ",
+            value: getPercentage(parseInt(cat8.length * 3), result8)
+        });
+
+
+        dict.sort(function (a, b) {
+            return b.value - a.value;
+        });
+        // console.log(dict);
+        document.getElementById("resultBody").innerHTML = '';
+        dict.forEach(function (item) {
+var newCont = '<tr><th style="width:50%"><span style="color:red">&#9658; </span>' + item.key +'</th><th style="width:30%"><div class="progress"><div class="progress-bar progress-bar-striped" role="progressbar" style="width: ' + item.value + ' % " aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div></div></th><th style="width:20%">' + item.value +'% </th></tr>';
+            document.getElementById("resultBody").innerHTML += newCont;
+        });
+        // var total = parseInt(cat1.length*3);
+        // console.log(result1);
+        // console.log(total);
+    }
+
+    function getPercentage(num, per) {
+        return ((per / num) * 100).toFixed(2);
+    }
+</script>
+</body>
+</html>

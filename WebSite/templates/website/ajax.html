@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    $('#id_subjects_category').change(function () {
+        let subjects_category_id = $("select option:selected").val()
+        let csrf = $("input[name=csrfmiddlewaretoken]").val()
+        let std = ''
+        let dirs = {
+            'subjects_category_id': subjects_category_id,
+            'csrfmiddlewaretoken': csrf
+        }
+        $.ajax(
+            {
+                url: "{% url 'WebSite:directory' %}",
+                data: dirs,
+                method: 'POST',
+                success: function (data) {
+                    if (data.state === 1){
+                        let stds = data.branches_names
+                        for (let i=1; i<stds.length; i++){
+                            std += "<option value=\"" +  stds[i].id + "\">" + stds[i].branches_name +"</option>"
+                        }
+                        $("#id_branches_name").html(std)
+                    }
+                }
+            }
+        )
+    })
+</script>
